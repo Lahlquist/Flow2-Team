@@ -8,11 +8,16 @@ package flow2_team;
  * Torsdag 10.10.2013
  */
 
-//Denne klasse indeholder?
+//Denne klasse indeholder "get'ere" og "set'ere" for personernes attributter.
 public class Persons
 {
 
     //Herunder ses de 3 attributter:
+    private String name;
+    private int alder;
+    private String køn;
+    
+    //Herunder ses de "get'ere" og "set'ere" der er lavet for attributterne:
     public String getName()
     {
         return name;
@@ -42,10 +47,5 @@ public class Persons
     {
         this.køn = køn;
     }
-    private String name;
-    private int alder;
-    private String køn;
-    
-    
     
 }

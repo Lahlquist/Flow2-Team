@@ -15,9 +15,12 @@ import java.io.IOException;
 
 public class ReadFile
 {
+    public static void main(String[] args)
+    {
+        
     // The name of the file to open.
 
-    String fileName = "C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\Names.txt";
+    String fileName = "/Users/Ahlquist/Desktop/Personer.txt";
     // This will reference one line at a time
     String line = null;
 
@@ -53,5 +56,6 @@ public class ReadFile
             // Or we could just do this: 
             // ex.printStackTrace();
         }
+    }
     }
 }

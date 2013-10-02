@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package flow2_team;
 
 import java.io.FileWriter;
@@ -9,9 +6,12 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 /**
- *
- * @author Andreas
+ * Flow 2 - "Team"
+ * Udarbejdet af:
+ * Andreas og Laura
+ * Torsdag 10.10.2013
  */
+
 public class WriteFile
 {
 

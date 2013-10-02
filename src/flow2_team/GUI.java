@@ -681,7 +681,7 @@ public class GUI extends javax.swing.JFrame
     private void jButton1_OpretTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_OpretTeamActionPerformed
     {//GEN-HEADEREND:event_jButton1_OpretTeamActionPerformed
         //Når der trykkes på "Opret Team"-knappen, skal vi skifte til panelet "Opret Team".
-        jPanel4_OpretTeam
+        
     }//GEN-LAST:event_jButton1_OpretTeamActionPerformed
 
     private void jComboBox1_TeamsItemStateChanged(java.awt.event.ItemEvent evt)//GEN-FIRST:event_jComboBox1_TeamsItemStateChanged

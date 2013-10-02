@@ -190,7 +190,7 @@ public class GUI extends javax.swing.JFrame
 
         jCheckBox2_Kvinde.setText("Kvinde");
 
-        jComboBox1_Alder.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Årstal", "..." }));
+        jComboBox1_Alder.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alder", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40" }));
 
         jTextField1_Fornavn.setText("Fornavn(e)");
 

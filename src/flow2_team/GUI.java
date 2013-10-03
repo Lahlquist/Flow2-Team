@@ -8,7 +8,9 @@ package flow2_team;
  * Torsdag 10.10.2013
  */
 
-import java.util.;
+import java.awt.Panel;
+import javax.swing.JPanel;
+import javax.swing.text.NavigationFilter;
 
 public class GUI extends javax.swing.JFrame
 {
@@ -55,12 +57,10 @@ public class GUI extends javax.swing.JFrame
         jTextField4_FinisherPoint = new javax.swing.JTextField();
         jButton1_OK_OpretPerson = new javax.swing.JButton();
         jButton1_GåTilForsiden_FraOpretPerson = new javax.swing.JButton();
-        jButton1_Tilbage_FraOpretPerson = new javax.swing.JButton();
         jPanel3_AllePersoner = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jButton1_GåTilForsiden_FraAllePersoner = new javax.swing.JButton();
-        jButton2_Tilbage_FraAllePersoner = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8_Navn = new javax.swing.JLabel();
         jLabel9_Alder = new javax.swing.JLabel();
@@ -86,7 +86,6 @@ public class GUI extends javax.swing.JFrame
         jButton1_SletPerson = new javax.swing.JButton();
         jPanel4_OpretTeam = new javax.swing.JPanel();
         jButton3_GåTilForsiden_FraOpretTeam = new javax.swing.JButton();
-        jButton4_Tilbage_FraOpretTeam = new javax.swing.JButton();
         jPanel5_AlleTeams = new javax.swing.JPanel();
         jButton1_Team1 = new javax.swing.JButton();
         jButton2_Team2 = new javax.swing.JButton();
@@ -101,7 +100,6 @@ public class GUI extends javax.swing.JFrame
         jScrollPane5 = new javax.swing.JScrollPane();
         jList5_Team4 = new javax.swing.JList();
         jButton5_GåTilForsiden_FraAlleTeams = new javax.swing.JButton();
-        jButton6_Tilbage_FraAlleTeams = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,6 +143,13 @@ public class GUI extends javax.swing.JFrame
         });
 
         jComboBox1_Personer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alle Personer", "Personer i Teams", "Personer uden for Teams" }));
+        jComboBox1_Personer.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jComboBox1_PersonerActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel1_ForsideLayout = new org.jdesktop.layout.GroupLayout(jPanel1_Forside);
         jPanel1_Forside.setLayout(jPanel1_ForsideLayout);
@@ -235,8 +240,6 @@ public class GUI extends javax.swing.JFrame
             }
         });
 
-        jButton1_Tilbage_FraOpretPerson.setText("← Tilbage");
-
         org.jdesktop.layout.GroupLayout jPanel2_OpretPersonLayout = new org.jdesktop.layout.GroupLayout(jPanel2_OpretPerson);
         jPanel2_OpretPerson.setLayout(jPanel2_OpretPersonLayout);
         jPanel2_OpretPersonLayout.setHorizontalGroup(
@@ -244,15 +247,9 @@ public class GUI extends javax.swing.JFrame
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2_OpretPersonLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(jButton1_GåTilForsiden_FraOpretPerson, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2_OpretPersonLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jButton1_OK_OpretPerson)
-                        .add(36, 36, 36))
-                    .add(jPanel2_OpretPersonLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton1_Tilbage_FraOpretPerson, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 118, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jButton1_OK_OpretPerson)
+                .add(36, 36, 36))
             .add(jPanel2_OpretPersonLayout.createSequentialGroup()
                 .add(21, 21, 21)
                 .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -348,9 +345,7 @@ public class GUI extends javax.swing.JFrame
                                 .addContainerGap(60, Short.MAX_VALUE))
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2_OpretPersonLayout.createSequentialGroup()
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                    .add(jButton1_Tilbage_FraOpretPerson, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .add(jButton1_GåTilForsiden_FraOpretPerson, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .add(jButton1_GåTilForsiden_FraOpretPerson)
                                 .addContainerGap())))
                     .add(jPanel2_OpretPersonLayout.createSequentialGroup()
                         .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -368,8 +363,13 @@ public class GUI extends javax.swing.JFrame
         jScrollPane1.setViewportView(jList1);
 
         jButton1_GåTilForsiden_FraAllePersoner.setText("Gå til Forsiden");
-
-        jButton2_Tilbage_FraAllePersoner.setText("← Tilbage");
+        jButton1_GåTilForsiden_FraAllePersoner.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton1_GåTilForsiden_FraAllePersonerActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 18)); // NOI18N
         jLabel7.setText("PERSON INFO");
@@ -427,10 +427,7 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap()
                 .add(jPanel3_AllePersonerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 318, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jPanel3_AllePersonerLayout.createSequentialGroup()
-                        .add(jButton1_GåTilForsiden_FraAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton2_Tilbage_FraAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                    .add(jButton1_GåTilForsiden_FraAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(jPanel3_AllePersonerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel3_AllePersonerLayout.createSequentialGroup()
                         .add(18, 18, 18)
@@ -487,9 +484,7 @@ public class GUI extends javax.swing.JFrame
                     .add(jPanel3_AllePersonerLayout.createSequentialGroup()
                         .add(jScrollPane1)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jPanel3_AllePersonerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jButton1_GåTilForsiden_FraAllePersoner, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(jButton2_Tilbage_FraAllePersoner, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .add(jButton1_GåTilForsiden_FraAllePersoner))
                     .add(jPanel3_AllePersonerLayout.createSequentialGroup()
                         .add(jLabel7)
                         .add(10, 10, 10)
@@ -539,8 +534,13 @@ public class GUI extends javax.swing.JFrame
         jTabbedPane1.addTab("Alle Personer", jPanel3_AllePersoner);
 
         jButton3_GåTilForsiden_FraOpretTeam.setText("Gå til Forsiden");
-
-        jButton4_Tilbage_FraOpretTeam.setText("← Tilbage");
+        jButton3_GåTilForsiden_FraOpretTeam.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton3_GåTilForsiden_FraOpretTeamActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel4_OpretTeamLayout = new org.jdesktop.layout.GroupLayout(jPanel4_OpretTeam);
         jPanel4_OpretTeam.setLayout(jPanel4_OpretTeamLayout);
@@ -549,17 +549,13 @@ public class GUI extends javax.swing.JFrame
             .add(jPanel4_OpretTeamLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(jButton3_GåTilForsiden_FraOpretTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton4_Tilbage_FraOpretTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addContainerGap(508, Short.MAX_VALUE))
         );
         jPanel4_OpretTeamLayout.setVerticalGroup(
             jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel4_OpretTeamLayout.createSequentialGroup()
                 .addContainerGap(324, Short.MAX_VALUE)
-                .add(jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                    .add(jButton4_Tilbage_FraOpretTeam, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jButton3_GåTilForsiden_FraOpretTeam, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(jButton3_GåTilForsiden_FraOpretTeam)
                 .addContainerGap())
         );
 
@@ -610,8 +606,13 @@ public class GUI extends javax.swing.JFrame
         jScrollPane5.setViewportView(jList5_Team4);
 
         jButton5_GåTilForsiden_FraAlleTeams.setText("Gå til Forsiden");
-
-        jButton6_Tilbage_FraAlleTeams.setText("← Tilbage");
+        jButton5_GåTilForsiden_FraAlleTeams.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton5_GåTilForsiden_FraAlleTeamsActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel5_AlleTeamsLayout = new org.jdesktop.layout.GroupLayout(jPanel5_AlleTeams);
         jPanel5_AlleTeams.setLayout(jPanel5_AlleTeamsLayout);
@@ -636,8 +637,6 @@ public class GUI extends javax.swing.JFrame
             .add(jPanel5_AlleTeamsLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(jButton5_GåTilForsiden_FraAlleTeams, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton6_Tilbage_FraAlleTeams, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 115, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(0, 0, Short.MAX_VALUE))
         );
         jPanel5_AlleTeamsLayout.setVerticalGroup(
@@ -660,9 +659,7 @@ public class GUI extends javax.swing.JFrame
                     .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                     .add(jScrollPane4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .add(18, 18, 18)
-                .add(jPanel5_AlleTeamsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jButton5_GåTilForsiden_FraAlleTeams, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jButton6_Tilbage_FraAlleTeams, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(jButton5_GåTilForsiden_FraAlleTeams)
                 .addContainerGap())
         );
 
@@ -690,29 +687,61 @@ public class GUI extends javax.swing.JFrame
     private void jButton1_OpretTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_OpretTeamActionPerformed
     {//GEN-HEADEREND:event_jButton1_OpretTeamActionPerformed
         //Når der trykkes på "Opret Team"-knappen, skal vi skifte til panelet "Opret Team".
-        
+        jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jButton1_OpretTeamActionPerformed
 
     private void jComboBox1_TeamsItemStateChanged(java.awt.event.ItemEvent evt)//GEN-FIRST:event_jComboBox1_TeamsItemStateChanged
     {//GEN-HEADEREND:event_jComboBox1_TeamsItemStateChanged
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jComboBox1_TeamsItemStateChanged
 
     private void jComboBox1_TeamsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jComboBox1_TeamsActionPerformed
     {//GEN-HEADEREND:event_jComboBox1_TeamsActionPerformed
-        // TODO add your handling code here:
+        /**
+        jComboBox1_Teams.setSelectedIndex(1);
+        jComboBox1_Teams.addActionListener(); //Inde i () skal der stå den fane, som team 1 er på...
+        
+        jComboBox1_Teams.setSelectedIndex(2);
+        jComboBox1_Teams.addActionListener(); //Inde i () skal der stå den fane, som team 2 er på...
+        
+        jComboBox1_Teams.setSelectedIndex(3);
+        jComboBox1_Teams.addActionListener(); //Inde i () skal der stå den fane, som team 3 er på...
+        
+        jComboBox1_Teams.setSelectedIndex(4);
+        jComboBox1_Teams.addActionListener(); //Inde i () skal der stå den fane, som team 4 er på...
+        */
     }//GEN-LAST:event_jComboBox1_TeamsActionPerformed
 
     private void jButton1_GåTilForsiden_FraOpretPersonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
     {//GEN-HEADEREND:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
-        // TODO add your handling code here:
+        //Når der trykkes på "Gå til Forsiden", skal vi skifte til Panel 1 (Forsiden).
+        jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
 
     private void jButton1_OpretPersonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_OpretPersonActionPerformed
     {//GEN-HEADEREND:event_jButton1_OpretPersonActionPerformed
-        jPanel.showPanel("Opret Person");
-        
+        jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_jButton1_OpretPersonActionPerformed
+
+    private void jComboBox1_PersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jComboBox1_PersonerActionPerformed
+    {//GEN-HEADEREND:event_jComboBox1_PersonerActionPerformed
+        
+    }//GEN-LAST:event_jComboBox1_PersonerActionPerformed
+
+    private void jButton1_GåTilForsiden_FraAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_GåTilForsiden_FraAllePersonerActionPerformed
+    {//GEN-HEADEREND:event_jButton1_GåTilForsiden_FraAllePersonerActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton1_GåTilForsiden_FraAllePersonerActionPerformed
+
+    private void jButton3_GåTilForsiden_FraOpretTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3_GåTilForsiden_FraOpretTeamActionPerformed
+    {//GEN-HEADEREND:event_jButton3_GåTilForsiden_FraOpretTeamActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton3_GåTilForsiden_FraOpretTeamActionPerformed
+
+    private void jButton5_GåTilForsiden_FraAlleTeamsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton5_GåTilForsiden_FraAlleTeamsActionPerformed
+    {//GEN-HEADEREND:event_jButton5_GåTilForsiden_FraAlleTeamsActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_jButton5_GåTilForsiden_FraAlleTeamsActionPerformed
 
     //Herunder ses main-metoden:
     public static void main(String args[])
@@ -764,15 +793,11 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton jButton1_OpretTeam;
     private javax.swing.JButton jButton1_SletPerson;
     private javax.swing.JButton jButton1_Team1;
-    private javax.swing.JButton jButton1_Tilbage_FraOpretPerson;
     private javax.swing.JButton jButton2_Team2;
-    private javax.swing.JButton jButton2_Tilbage_FraAllePersoner;
     private javax.swing.JButton jButton3_GåTilForsiden_FraOpretTeam;
     private javax.swing.JButton jButton3_Team3;
     private javax.swing.JButton jButton4_Team4;
-    private javax.swing.JButton jButton4_Tilbage_FraOpretTeam;
     private javax.swing.JButton jButton5_GåTilForsiden_FraAlleTeams;
-    private javax.swing.JButton jButton6_Tilbage_FraAlleTeams;
     private javax.swing.JCheckBox jCheckBox1_Mand;
     private javax.swing.JCheckBox jCheckBox2_Kvinde;
     private javax.swing.JComboBox jComboBox1_Alder;

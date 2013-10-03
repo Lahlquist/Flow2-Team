@@ -164,6 +164,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1_PersonerActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -182,18 +185,9 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton1_GåTilForsiden_FraOpretPerson" min="-2" pref="143" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton1_OK_OpretPerson" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton1_Tilbage_FraOpretPerson" min="-2" pref="118" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jButton1_OK_OpretPerson" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
@@ -320,10 +314,7 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jButton1_Tilbage_FraOpretPerson" max="32767" attributes="0"/>
-                                          <Component id="jButton1_GåTilForsiden_FraOpretPerson" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="jButton1_GåTilForsiden_FraOpretPerson" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -466,11 +457,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1_G&#xe5;TilForsiden_FraOpretPersonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1_Tilbage_FraOpretPerson">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2190; Tilbage"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3_AllePersoner">
@@ -489,11 +475,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane1" min="-2" pref="318" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="jButton1_GåTilForsiden_FraAllePersoner" min="-2" pref="143" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton2_Tilbage_FraAllePersoner" min="-2" pref="115" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jButton1_GåTilForsiden_FraAllePersoner" min="-2" pref="143" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -568,10 +550,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jScrollPane1" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jButton1_GåTilForsiden_FraAllePersoner" max="32767" attributes="0"/>
-                                  <Component id="jButton2_Tilbage_FraAllePersoner" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jButton1_GåTilForsiden_FraAllePersoner" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -658,11 +637,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="G&#xe5; til Forsiden"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton2_Tilbage_FraAllePersoner">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2190; Tilbage"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1_G&#xe5;TilForsiden_FraAllePersonerActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
@@ -802,9 +779,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton3_GåTilForsiden_FraOpretTeam" min="-2" pref="143" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton4_Tilbage_FraOpretTeam" min="-2" pref="115" max="-2" attributes="0"/>
-                      <EmptySpace pref="387" max="32767" attributes="0"/>
+                      <EmptySpace pref="508" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -812,10 +787,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="324" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jButton4_Tilbage_FraOpretTeam" max="32767" attributes="0"/>
-                          <Component id="jButton3_GåTilForsiden_FraOpretTeam" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jButton3_GåTilForsiden_FraOpretTeam" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -826,11 +798,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="G&#xe5; til Forsiden"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton4_Tilbage_FraOpretTeam">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2190; Tilbage"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3_G&#xe5;TilForsiden_FraOpretTeamActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -870,8 +840,6 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton5_GåTilForsiden_FraAlleTeams" min="-2" pref="143" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton6_Tilbage_FraAlleTeams" min="-2" pref="115" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -900,10 +868,7 @@
                           <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButton5_GåTilForsiden_FraAlleTeams" max="32767" attributes="0"/>
-                          <Component id="jButton6_Tilbage_FraAlleTeams" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jButton5_GåTilForsiden_FraAlleTeams" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1030,11 +995,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="G&#xe5; til Forsiden"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton6_Tilbage_FraAlleTeams">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2190; Tilbage"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5_G&#xe5;TilForsiden_FraAlleTeamsActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

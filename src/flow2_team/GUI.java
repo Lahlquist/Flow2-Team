@@ -8,6 +8,8 @@ package flow2_team;
  * Torsdag 10.10.2013
  */
 
+import java.util.;
+
 public class GUI extends javax.swing.JFrame
 {
     //Herunder ses konstruktøren "GUI":
@@ -118,6 +120,13 @@ public class GUI extends javax.swing.JFrame
 
         jButton1_OpretPerson.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 18)); // NOI18N
         jButton1_OpretPerson.setText("OPRET PERSON");
+        jButton1_OpretPerson.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton1_OpretPersonActionPerformed(evt);
+            }
+        });
 
         jComboBox1_Teams.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alle Teams", "Team1", "Team2", "Team3", "Team4" }));
         jComboBox1_Teams.addItemListener(new java.awt.event.ItemListener()
@@ -698,6 +707,12 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
+
+    private void jButton1_OpretPersonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_OpretPersonActionPerformed
+    {//GEN-HEADEREND:event_jButton1_OpretPersonActionPerformed
+        jPanel.showPanel("Opret Person");
+        
+    }//GEN-LAST:event_jButton1_OpretPersonActionPerformed
 
     //Herunder ses main-metoden:
     public static void main(String args[])

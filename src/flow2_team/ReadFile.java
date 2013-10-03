@@ -1,56 +1,55 @@
-
 package flow2_team;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
- * Flow 2 - "Team"
- * Udarbejdet af:
- * Andreas og Laura
- * Torsdag 10.10.2013
+ * Flow 2 - "Team" Udarbejdet af: Andreas og Laura Torsdag 10.10.2013
  */
-
 public class ReadFile
 {
-    public static void main(String[] args)
-    {
-    //Herunder ses referencen til den textfil, der indeholder vores person-data:
-    String fileName = "C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\names.txt";
-    
-    // This will reference one line at a time
-    String line = null;
-       
-    try
-    {
-        // FileReader reads text files in the default encoding.
-        FileReader fileReader = new FileReader(fileName);
 
-        // Always wrap FileReader in BufferedReader.
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+    ArrayList personlist = new ArrayList();
 
-        while ((line = bufferedReader.readLine()) != null)
+    public ArrayList getTxt()
+    {
+        //Herunder ses referencen til den textfil, der indeholder vores person-data:
+
+        String fileName = "C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\names.txt";
+
+        // This will reference one line at a time
+        String line = null;
+
+
+
+        try
         {
-            System.out.println(line);
+            // FileReader læser tekstfiler i standard encoding.
+            FileReader fileReader = new FileReader(fileName);
+
+            // Læser tekst fra en karakter-input stream, buffer tegn, så som at sørge for effektiv læsning af tegn, arrays og linjer.
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            while ((line = bufferedReader.readLine()) != null)
+            {
+                personlist.add(line);
+            }
+
+            // Lukker filen.
+            bufferedReader.close();
+        } catch (FileNotFoundException ex)
+        {
+            System.out.println("Unable to open file '" + fileName + "'");
+        } catch (IOException ex)
+        {
+            System.out.println("Error reading file '" + fileName + "'");
+
+
+
         }
-
-        // Always close files.
-        bufferedReader.close();
-    }
-
-    catch (FileNotFoundException ex)
-    {
-        System.out.println("Unable to open file '" + fileName + "'");
-    }
-
-    catch (IOException ex)
-    {
-        System.out.println("Error reading file '" + fileName + "'");
-        // Or we could just do this: 
-        // ex.printStackTrace();
-    }
-    
+        return personlist;
     }
 }

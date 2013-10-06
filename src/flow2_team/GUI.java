@@ -14,6 +14,7 @@ import javax.swing.text.NavigationFilter;
 
 public class GUI extends javax.swing.JFrame
 {
+    Control c = new Control();
     //Herunder ses konstruktøren "GUI":
     public GUI()
     {

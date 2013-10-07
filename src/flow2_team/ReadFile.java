@@ -18,7 +18,7 @@ public class ReadFile
     {
         //Herunder ses referencen til den textfil, der indeholder vores person-data:
 
-        String fileName = "C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\names.txt";
+        String fileName = "C:\\Users\\Darkeonz\\Documents\\NetBeansProjects\\names.txt";
 
         // This will reference one line at a time
         String line = null;

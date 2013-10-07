@@ -24,7 +24,7 @@ public class WriteFile
         PrintWriter pw = null;
         try
         {
-            pw = new PrintWriter("C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\names.txt");
+            pw = new PrintWriter("C:\\Users\\Darkeonz\\Documents\\NetBeansProjects\\names.txt");
         } catch (FileNotFoundException ex)
         {
             System.out.println("");

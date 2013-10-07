@@ -70,18 +70,18 @@
                       <EmptySpace pref="122" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jButton1_OpretPerson" min="-2" pref="161" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
                               <Component id="jComboBox1_Personer" min="-2" pref="221" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jButton1_OpretPerson" min="-2" pref="172" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="296" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -101,7 +101,7 @@
                           <Component id="jComboBox1_Personer" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox1_Teams" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="213" max="32767" attributes="0"/>
+                      <EmptySpace pref="215" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -182,80 +182,41 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1_GåTilForsiden_FraOpretPerson" min="-2" pref="143" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton1_OK_OpretPerson" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel2_Navn" max="32767" attributes="0"/>
-                                  <Component id="jLabel3_Alder" pref="64" max="32767" attributes="0"/>
-                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jTextField1_Fornavn" min="-2" pref="168" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jTextField2_Efternavn" min="-2" pref="197" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jComboBox1_Alder" min="-2" pref="110" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jLabel2" min="-2" pref="309" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel4_Køn" min="-2" pref="61" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioButton1_Mand" min="-2" pref="75" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioButton2_Kvinde" min="-2" pref="82" max="-2" attributes="0"/>
+                              <Component id="jButton1_GåTilForsiden_FraOpretPerson" min="-2" pref="143" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel3" min="-2" pref="112" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                                      <Component id="jTextField1_AdministratorPoint" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jTextField3_AnalystPoint" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" pref="64" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jTextField2_CreativePoint" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" min="-2" pref="66" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jTextField4_FinisherPoint" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jLabel6" min="-2" pref="66" max="-2" attributes="0"/>
+                                      <Component id="jLabel2_Navn" min="-2" pref="64" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jTextField1_Fornavn" min="-2" pref="168" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel2" min="-2" pref="309" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel3" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" min="-2" pref="66" max="-2" attributes="0"/>
+                                          <Component id="jLabel6" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
+                                          <Component id="jButton1_OK_OpretPerson" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jTextField2_CreativePoint" pref="39" max="32767" attributes="0"/>
+                                          <Component id="jTextField3_AnalystPoint" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jTextField1_AdministratorPoint" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jTextField4_FinisherPoint" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="201" max="32767" attributes="0"/>
+                      <EmptySpace min="110" pref="335" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -264,65 +225,36 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jTextField2_Efternavn" max="32767" attributes="0"/>
                           <Component id="jLabel2_Navn" max="32767" attributes="0"/>
                           <Component id="jTextField1_Fornavn" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel3_Alder" max="32767" attributes="0"/>
-                          <Component id="jComboBox1_Alder" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel4_Køn" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="jRadioButton1_Mand" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jRadioButton2_Kvinde" pref="24" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" pref="16" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel3" max="32767" attributes="0"/>
-                                          <Component id="jLabel4" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel6" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField3_AnalystPoint" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField1_AdministratorPoint" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField2_CreativePoint" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField4_FinisherPoint" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jButton1_OK_OpretPerson" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="119" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jButton1_GåTilForsiden_FraOpretPerson" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel5" min="-2" pref="16" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField1_AdministratorPoint" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField3_AnalystPoint" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel5" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="jTextField2_CreativePoint" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField4_FinisherPoint" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="jButton1_OK_OpretPerson" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="jButton1_GåTilForsiden_FraOpretPerson" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -333,57 +265,13 @@
                 <Property name="text" type="java.lang.String" value="Navn:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3_Alder">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Alder:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4_K&#xf8;n">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="K&#xf8;n:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1_Alder">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="24">
-                    <StringItem index="0" value="Alder"/>
-                    <StringItem index="1" value="18"/>
-                    <StringItem index="2" value="19"/>
-                    <StringItem index="3" value="20"/>
-                    <StringItem index="4" value="21"/>
-                    <StringItem index="5" value="22"/>
-                    <StringItem index="6" value="23"/>
-                    <StringItem index="7" value="24"/>
-                    <StringItem index="8" value="25"/>
-                    <StringItem index="9" value="26"/>
-                    <StringItem index="10" value="27"/>
-                    <StringItem index="11" value="28"/>
-                    <StringItem index="12" value="29"/>
-                    <StringItem index="13" value="30"/>
-                    <StringItem index="14" value="31"/>
-                    <StringItem index="15" value="32"/>
-                    <StringItem index="16" value="33"/>
-                    <StringItem index="17" value="34"/>
-                    <StringItem index="18" value="35"/>
-                    <StringItem index="19" value="36"/>
-                    <StringItem index="20" value="37"/>
-                    <StringItem index="21" value="38"/>
-                    <StringItem index="22" value="39"/>
-                    <StringItem index="23" value="40"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="jTextField1_Fornavn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fornavn(e)"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2_Efternavn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Efternavn"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1_FornavnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
@@ -437,6 +325,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="OK"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1_OK_OpretPersonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton1_G&#xe5;TilForsiden_FraOpretPerson">
               <Properties>
@@ -445,16 +336,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1_G&#xe5;TilForsiden_FraOpretPersonActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton1_Mand">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Mand"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton2_Kvinde">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Kvinde"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -489,22 +370,15 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jLabel9_Alder" max="32767" attributes="0"/>
-                                                      <Component id="jLabel8_Navn" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jLabel10_Køn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel8_Navn" min="-2" pref="39" max="-2" attributes="0"/>
                                                   <Component id="jLabel11_Team" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="jLabel8_Navnet" pref="222" max="32767" attributes="0"/>
-                                                  <Component id="jLabel9_Alderen" max="32767" attributes="0"/>
-                                                  <Component id="jLabel10_Kønnet" max="32767" attributes="0"/>
                                                   <Component id="jLabel11_Teamet" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -527,6 +401,7 @@
                                                   <Component id="jLabel20" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
+                                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="26" max="32767" attributes="0"/>
                                   </Group>
@@ -534,7 +409,7 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton1_SletPerson" min="-2" pref="151" max="-2" attributes="0"/>
+                              <Component id="jButton1_SletPerson" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -554,23 +429,13 @@
                                   <Component id="jLabel8_Navnet" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel9_Alder" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="jLabel9_Alderen" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel11_Team" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="jLabel11_Teamet" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel10_Køn" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="jLabel10_Kønnet" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel11_Team" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Component id="jLabel11_Teamet" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel13_AdministratorPoint" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -594,7 +459,7 @@
                                   <Component id="jLabel16_FinisherPoint" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="31" max="32767" attributes="0"/>
+                              <EmptySpace pref="58" max="32767" attributes="0"/>
                               <Component id="jButton1_SletPerson" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane1" max="32767" attributes="0"/>
@@ -650,16 +515,6 @@
                 <Property name="text" type="java.lang.String" value="NAVN: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9_Alder">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="ALDER: "/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10_K&#xf8;n">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="K&#xd8;N: "/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel11_Team">
               <Properties>
                 <Property name="text" type="java.lang.String" value="TEAM: "/>
@@ -667,17 +522,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8_Navnet">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fornavn(e) og Efternavn"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9_Alderen">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Alder"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10_K&#xf8;nnet">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Mand eller Kvinde"/>
+                <Property name="text" type="java.lang.String" value="Fornavn(e)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11_Teamet">
@@ -795,7 +640,7 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jTabbedPane2" pref="328" max="32767" attributes="0"/>
+                              <Component id="jTabbedPane2" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -824,7 +669,7 @@
                                       <Component id="jScrollPane6" min="-2" pref="282" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="30" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1105,8 +950,8 @@
                               <Component id="jScrollPane2" pref="260" max="32767" attributes="0"/>
                               <Component id="jScrollPane4" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jButton1_Team1" min="-2" pref="162" max="-2" attributes="0"/>
-                          <Component id="jButton3_Team3" min="-2" pref="162" max="-2" attributes="0"/>
+                          <Component id="jButton3_Team3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1_Team1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1114,8 +959,8 @@
                               <Component id="jScrollPane3" pref="260" max="32767" attributes="0"/>
                               <Component id="jScrollPane5" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jButton2_Team2" min="-2" pref="162" max="-2" attributes="0"/>
-                          <Component id="jButton4_Team4" min="-2" pref="162" max="-2" attributes="0"/>
+                          <Component id="jButton2_Team2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton4_Team4" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="62" max="32767" attributes="0"/>
                   </Group>
@@ -1146,7 +991,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane5" pref="115" max="32767" attributes="0"/>
+                          <Component id="jScrollPane5" pref="117" max="32767" attributes="0"/>
                           <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>

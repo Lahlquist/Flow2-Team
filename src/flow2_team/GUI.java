@@ -1014,8 +1014,11 @@ public class GUI extends javax.swing.JFrame
 
     private void jButton1_HentAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_HentAllePersonerActionPerformed
     {//GEN-HEADEREND:event_jButton1_HentAllePersonerActionPerformed
-        personListe.getTxt();
-        personerUdenforTeams.addElement(personListe);
+//        personListe.getTxt();
+//        for(int i=0;i<personListe.personlist.size();i++){
+//        personerUdenforTeams.addElement(personListe.getTxt());
+//        }
+        personerUdenforTeams.addElement(personListe.getTxt());
     }//GEN-LAST:event_jButton1_HentAllePersonerActionPerformed
 
     //Herunder ses main-metoden:

@@ -4,12 +4,15 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Flow 2 - "Team" Udarbejdet af: Andreas og Laura Torsdag 10.10.2013
  */
 public class WriteFile
 {
+
+    ArrayList<Persons> liste;
 
     public WriteFile()
     {
@@ -20,12 +23,12 @@ public class WriteFile
             pw = new PrintWriter("C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\names.txt");
         } catch (FileNotFoundException ex)
         {
-            System.out.println("Error opening file");
+            System.out.println("");
         }
-        //-- demo - write
-        pw.println("text1, 1");
-        pw.println("text2, 1, 2");
-        pw.println("text3, 1, 2, 3");
-        pw.close();
+        for (int i = 1; i < liste.size(); i++)
+        {
+            pw.println(liste.get(i).getName());
+        }
+
     }
 }

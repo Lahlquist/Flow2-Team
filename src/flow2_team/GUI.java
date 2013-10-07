@@ -15,7 +15,7 @@ import javax.swing.text.NavigationFilter;
 
 public class GUI extends javax.swing.JFrame
 {
-    Control c = new Control();
+    //Control c = new Control();
     
     //Herunder ses to attributter, kaldet "model1" og "model2":
     DefaultListModel personerUdenforTeams;
@@ -23,6 +23,9 @@ public class GUI extends javax.swing.JFrame
     DefaultListModel team2Listen;
     DefaultListModel team3Listen;
     DefaultListModel team4Listen;
+    
+    //
+    ReadFile personListe = new ReadFile();
     
     //Herunder ses konstruktøren "GUI":
     public GUI()
@@ -126,7 +129,7 @@ public class GUI extends javax.swing.JFrame
         jPanel4_TeamNo4 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         jList2_TeamNo4 = new javax.swing.JList();
-        jButton1 = new javax.swing.JButton();
+        jButton1_HentAllePersoner = new javax.swing.JButton();
         jPanel5_AlleTeams = new javax.swing.JPanel();
         jButton1_Team1 = new javax.swing.JButton();
         jButton2_Team2 = new javax.swing.JButton();
@@ -693,7 +696,14 @@ public class GUI extends javax.swing.JFrame
 
         jTabbedPane2.addTab("Team4", jPanel4_TeamNo4);
 
-        jButton1.setText("HENT ALLE PERSONER");
+        jButton1_HentAllePersoner.setText("HENT ALLE PERSONER");
+        jButton1_HentAllePersoner.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton1_HentAllePersonerActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel4_OpretTeamLayout = new org.jdesktop.layout.GroupLayout(jPanel4_OpretTeam);
         jPanel4_OpretTeam.setLayout(jPanel4_OpretTeamLayout);
@@ -715,7 +725,7 @@ public class GUI extends javax.swing.JFrame
                                     .add(jButton2_Fjern)))
                             .add(jPanel4_OpretTeamLayout.createSequentialGroup()
                                 .add(30, 30, 30)
-                                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 191, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(jButton1_HentAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 191, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(jTabbedPane2)))
                 .addContainerGap())
@@ -736,7 +746,7 @@ public class GUI extends javax.swing.JFrame
                         .add(jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jTabbedPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 334, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(jPanel4_OpretTeamLayout.createSequentialGroup()
-                                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(jButton1_HentAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 282, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .add(0, 30, Short.MAX_VALUE)))
@@ -968,12 +978,45 @@ public class GUI extends javax.swing.JFrame
 
     private void jButton2_FjernActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_FjernActionPerformed
     {//GEN-HEADEREND:event_jButton2_FjernActionPerformed
-        //Hvis der trykkes på "Fjern", bliver en person flyttet fra liste 2 (Personer i teams) tilbage til liste 1 (Personer udenfor teams)
-        Object valgt2 = jList3_OprettedeTeams.getSelectedValue();
-        boolean fundet2 = model2.removeElement(valgt2);
-        if (fundet2)
-            model1.addElement(valgt2);
+        //Hvis der trykkes på "Fjern", bliver en person flyttet fra team-listen og tilbage til liste 1 (Personer udenfor teams)
+        while (jPanel1__TeamNo1.hasFocus())
+        {
+            Object valgt1 = jList2_TeamNo1.getSelectedValue();
+            boolean fundet1 = team1Listen.removeElement(valgt1);
+            if (fundet1)
+                personerUdenforTeams.addElement(valgt1);
+        }
+        
+        while (jPanel2_TeamNo2.hasFocus())
+        {
+            Object valgt2 = jList2_TeamNo2.getSelectedValue();
+            boolean fundet2 = team2Listen.removeElement(valgt2);
+            if (fundet2)
+                personerUdenforTeams.addElement(valgt2);
+        }
+        
+        while (jPanel3_TeamNo3.hasFocus())
+        {
+            Object valgt3 = jList2_TeamNo3.getSelectedValue();
+            boolean fundet3 = team3Listen.removeElement(valgt3);
+            if (fundet3)
+                personerUdenforTeams.addElement(valgt3);
+        }
+        
+        while (jPanel4_TeamNo4.hasFocus())
+        {
+            Object valgt4 = jList2_TeamNo4.getSelectedValue();
+            boolean fundet4 = team4Listen.removeElement(valgt4);
+            if (fundet4)
+                personerUdenforTeams.addElement(valgt4);
+        }
     }//GEN-LAST:event_jButton2_FjernActionPerformed
+
+    private void jButton1_HentAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_HentAllePersonerActionPerformed
+    {//GEN-HEADEREND:event_jButton1_HentAllePersonerActionPerformed
+        personListe.getTxt();
+        personerUdenforTeams.addElement(personListe);
+    }//GEN-LAST:event_jButton1_HentAllePersonerActionPerformed
 
     //Herunder ses main-metoden:
     public static void main(String args[])
@@ -1018,9 +1061,9 @@ public class GUI extends javax.swing.JFrame
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton1_GåTilForsiden_FraAllePersoner;
     private javax.swing.JButton jButton1_GåTilForsiden_FraOpretPerson;
+    private javax.swing.JButton jButton1_HentAllePersoner;
     private javax.swing.JButton jButton1_OK_OpretPerson;
     private javax.swing.JButton jButton1_OpretPerson;
     private javax.swing.JButton jButton1_OpretTeam;

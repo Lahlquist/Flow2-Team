@@ -7,8 +7,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Flow 2 - "Team" Udarbejdet af: Andreas og Laura Torsdag 10.10.2013
+ * Flow 2 - "Team"
+ * Udarbejdet af:
+ * Andreas og Laura
+ * Torsdag 10.10.2013
  */
+
 public class WriteFile
 {
 

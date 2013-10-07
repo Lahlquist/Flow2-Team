@@ -21,8 +21,9 @@ public class Control
 
     }
 
-    public void addPerson(String name, int age, String køn)
+    public void addPerson(String name, int age, String gender)
     {
-        Persons p = new Persons(name, age, køn);
+        Persons p = new Persons(name, age, gender);
+        people.add(p);
     }
 }

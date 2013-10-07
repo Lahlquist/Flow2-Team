@@ -93,6 +93,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jButton1_SletPerson = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel4_OpretTeam = new javax.swing.JPanel();
         jButton3_GåTilForsiden_FraOpretTeam = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -231,6 +232,11 @@ public class GUI extends javax.swing.JFrame {
         jLabel6.setText("FINISHER");
 
         jTextField1_AdministratorPoint.setText("0-30");
+        jTextField1_AdministratorPoint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1_AdministratorPointActionPerformed(evt);
+            }
+        });
 
         jTextField2_CreativePoint.setText("0-30");
 
@@ -373,6 +379,13 @@ public class GUI extends javax.swing.JFrame {
         jButton1_SletPerson.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 18)); // NOI18N
         jButton1_SletPerson.setText("SLET PERSON");
 
+        jButton1.setText("Hent Personer ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel3_AllePersonerLayout = new org.jdesktop.layout.GroupLayout(jPanel3_AllePersoner);
         jPanel3_AllePersoner.setLayout(jPanel3_AllePersonerLayout);
         jPanel3_AllePersonerLayout.setHorizontalGroup(
@@ -381,7 +394,10 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .add(jPanel3_AllePersonerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 318, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton1_GåTilForsiden_FraAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel3_AllePersonerLayout.createSequentialGroup()
+                        .add(jButton1_GåTilForsiden_FraAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 137, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(jPanel3_AllePersonerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel3_AllePersonerLayout.createSequentialGroup()
                         .add(18, 18, 18)
@@ -466,7 +482,9 @@ public class GUI extends javax.swing.JFrame {
                         .add(jButton1_SletPerson))
                     .add(jScrollPane1))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton1_GåTilForsiden_FraAllePersoner)
+                .add(jPanel3_AllePersonerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton1_GåTilForsiden_FraAllePersoner)
+                    .add(jButton1))
                 .addContainerGap())
         );
 
@@ -859,13 +877,14 @@ public class GUI extends javax.swing.JFrame {
             if (fundet4) {
                 team4Listen.addElement(valgt4);
             }
+
         }
     }//GEN-LAST:event_jButton1_TilføjActionPerformed
 
     private void jButton2_FjernActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_FjernActionPerformed
     {//GEN-HEADEREND:event_jButton2_FjernActionPerformed
         //Hvis der trykkes på "Fjern", bliver en person flyttet fra team-listen og tilbage til liste 1 (Personer udenfor teams)
-        if (jTabbedPane2.getSelectedIndex() == 0)  {
+        if (jTabbedPane2.getSelectedIndex() == 0) {
             Object valgt1 = jList2_TeamNo1.getSelectedValue();
             boolean fundet1 = team1Listen.removeElement(valgt1);
             if (fundet1) {
@@ -873,7 +892,7 @@ public class GUI extends javax.swing.JFrame {
             }
         }
 
-         if (jTabbedPane2.getSelectedIndex() == 1) {
+        if (jTabbedPane2.getSelectedIndex() == 1) {
             Object valgt2 = jList2_TeamNo2.getSelectedValue();
             boolean fundet2 = team2Listen.removeElement(valgt2);
             if (fundet2) {
@@ -881,7 +900,7 @@ public class GUI extends javax.swing.JFrame {
             }
         }
 
-         if (jTabbedPane2.getSelectedIndex() == 2) {
+        if (jTabbedPane2.getSelectedIndex() == 2) {
             Object valgt3 = jList2_TeamNo3.getSelectedValue();
             boolean fundet3 = team3Listen.removeElement(valgt3);
             if (fundet3) {
@@ -889,7 +908,7 @@ public class GUI extends javax.swing.JFrame {
             }
         }
 
-         if (jTabbedPane2.getSelectedIndex() == 3) {
+        if (jTabbedPane2.getSelectedIndex() == 3) {
             Object valgt4 = jList2_TeamNo4.getSelectedValue();
             boolean fundet4 = team4Listen.removeElement(valgt4);
             if (fundet4) {
@@ -910,6 +929,7 @@ public class GUI extends javax.swing.JFrame {
         for (int i = 0; i < resultat.size(); i++) {
             personerUdenforTeams.addElement(resultat.get(i));
         }
+
     }//GEN-LAST:event_jButton1_HentAllePersonerActionPerformed
 
     private void jTextField1_FornavnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_FornavnActionPerformed
@@ -923,14 +943,21 @@ public class GUI extends javax.swing.JFrame {
         int creativePoint = Integer.parseInt(jTextField2_CreativePoint.getText());
         int analystPoint = Integer.parseInt(jTextField3_AnalystPoint.getText());
         int finisherPoint = Integer.parseInt(jTextField4_FinisherPoint.getText());
-        
-        if ((administratorPoint + creativePoint + analystPoint + finisherPoint) != 30)
-        {
+
+        if ((administratorPoint + creativePoint + analystPoint + finisherPoint) != 30) {
             JOptionPane.showMessageDialog(this, "Du skal fordele 30 point");
-            
+
             return;
         }
     }//GEN-LAST:event_jButton1_OK_OpretPersonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1_AdministratorPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_AdministratorPointActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1_AdministratorPointActionPerformed
 
     //Herunder ses main-metoden:
     public static void main(String args[]) {
@@ -965,6 +992,7 @@ public class GUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton1_GåTilForsiden_FraAllePersoner;
     private javax.swing.JButton jButton1_GåTilForsiden_FraOpretPerson;
     private javax.swing.JButton jButton1_HentAllePersoner;

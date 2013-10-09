@@ -36,7 +36,7 @@ public class GUI extends javax.swing.JFrame
         team3Listen = new DefaultListModel();
         team4Listen = new DefaultListModel();
         allePersonerIAllePersoner = new DefaultListModel();
-        
+
         jList2_AllePersonerUdenforTeams.setModel(personerUdenforTeams);
         jList2_TeamNo1.setModel(team1Listen);
         jList2_TeamNo2.setModel(team2Listen);
@@ -767,79 +767,85 @@ public class GUI extends javax.swing.JFrame
         //Når der trykkes på "Opret Team"-knappen, skal vi skifte til panelet "Opret Team".
         jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jButton1_OpretTeamActionPerformed
-    
+
     private void jButton1_GåTilForsiden_FraOpretPersonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
     {//GEN-HEADEREND:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
         //Når der trykkes på "Gå til Forsiden", skal vi skifte til Panel 1 (Forsiden).
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
-    
+
     private void jButton1_OpretPersonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_OpretPersonActionPerformed
     {//GEN-HEADEREND:event_jButton1_OpretPersonActionPerformed
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_jButton1_OpretPersonActionPerformed
-    
+
     private void jButton1_GåTilForsiden_FraAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_GåTilForsiden_FraAllePersonerActionPerformed
     {//GEN-HEADEREND:event_jButton1_GåTilForsiden_FraAllePersonerActionPerformed
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton1_GåTilForsiden_FraAllePersonerActionPerformed
-    
+
     private void jButton3_GåTilForsiden_FraOpretTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3_GåTilForsiden_FraOpretTeamActionPerformed
     {//GEN-HEADEREND:event_jButton3_GåTilForsiden_FraOpretTeamActionPerformed
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton3_GåTilForsiden_FraOpretTeamActionPerformed
-    
+
     private void jButton5_GåTilForsiden_FraAlleTeamsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton5_GåTilForsiden_FraAlleTeamsActionPerformed
     {//GEN-HEADEREND:event_jButton5_GåTilForsiden_FraAlleTeamsActionPerformed
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jButton5_GåTilForsiden_FraAlleTeamsActionPerformed
-    
+
     private void jButton1_TilføjActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_TilføjActionPerformed
     {//GEN-HEADEREND:event_jButton1_TilføjActionPerformed
         //Hvis der trykkes på "Tilføj", bliver en person flyttet fra liste 1 (Personer udenfor teams) til en valgt team-liste:
 
         if (jTabbedPane2.getSelectedIndex() == 0)
         {
-            Object valgt1 = jList2_AllePersonerUdenforTeams.getSelectedValue();
+            Persons valgt1 = (Persons) jList2_AllePersonerUdenforTeams.getSelectedValue();
             boolean fundet1 = personerUdenforTeams.removeElement(valgt1);
             if (fundet1)
             {
                 team1Listen.addElement(valgt1);
             }
         }
-        
+
         if (jTabbedPane2.getSelectedIndex() == 1)
         {
-            Object valgt2 = jList2_AllePersonerUdenforTeams.getSelectedValue();
+            Persons valgt2 = (Persons) jList2_AllePersonerUdenforTeams.getSelectedValue();
             boolean fundet2 = personerUdenforTeams.removeElement(valgt2);
             if (fundet2)
             {
                 team2Listen.addElement(valgt2);
             }
         }
-        
+
         if (jTabbedPane2.getSelectedIndex() == 2)
         {
-            Object valgt3 = jList2_AllePersonerUdenforTeams.getSelectedValue();
+            Persons valgt3 = (Persons) jList2_AllePersonerUdenforTeams.getSelectedValue();
             boolean fundet3 = personerUdenforTeams.removeElement(valgt3);
             if (fundet3)
             {
                 team3Listen.addElement(valgt3);
             }
         }
-        
+
         if (jTabbedPane2.getSelectedIndex() == 3)
         {
             Object valgt4 = jList2_AllePersonerUdenforTeams.getSelectedValue();
-            boolean fundet4 = personerUdenforTeams.removeElement(valgt4);
-            if (fundet4)
+
+            if (team4Listen.size() < 4)
             {
+                personerUdenforTeams.removeElement(valgt4);
                 team4Listen.addElement(valgt4);
+            } else
+            {
+
+                JOptionPane.showMessageDialog(this, "Der må max være 4 personer på et team!");
             }
-            
+
+
         }
     }//GEN-LAST:event_jButton1_TilføjActionPerformed
-    
+
     private void jButton2_FjernActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_FjernActionPerformed
     {//GEN-HEADEREND:event_jButton2_FjernActionPerformed
         //Hvis der trykkes på "Fjern", bliver en person flyttet fra team-listen og tilbage til liste 1 (Personer udenfor teams)
@@ -852,7 +858,7 @@ public class GUI extends javax.swing.JFrame
                 personerUdenforTeams.addElement(valgt1);
             }
         }
-        
+
         if (jTabbedPane2.getSelectedIndex() == 1)
         {
             Object valgt2 = jList2_TeamNo2.getSelectedValue();
@@ -862,7 +868,7 @@ public class GUI extends javax.swing.JFrame
                 personerUdenforTeams.addElement(valgt2);
             }
         }
-        
+
         if (jTabbedPane2.getSelectedIndex() == 2)
         {
             Object valgt3 = jList2_TeamNo3.getSelectedValue();
@@ -872,7 +878,7 @@ public class GUI extends javax.swing.JFrame
                 personerUdenforTeams.addElement(valgt3);
             }
         }
-        
+
         if (jTabbedPane2.getSelectedIndex() == 3)
         {
             Object valgt4 = jList2_TeamNo4.getSelectedValue();
@@ -883,7 +889,7 @@ public class GUI extends javax.swing.JFrame
             }
         }
     }//GEN-LAST:event_jButton2_FjernActionPerformed
-    
+
     private void jButton1_HentAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_HentAllePersonerActionPerformed
     {//GEN-HEADEREND:event_jButton1_HentAllePersonerActionPerformed
         ArrayList<Persons> resultat = control.getPeople();
@@ -891,13 +897,13 @@ public class GUI extends javax.swing.JFrame
         {
             personerUdenforTeams.addElement(resultat.get(i).toString());
         }
-        
+
     }//GEN-LAST:event_jButton1_HentAllePersonerActionPerformed
-    
+
     private void jTextField1_FornavnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_FornavnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1_FornavnActionPerformed
-    
+
     private void jButton1_OK_OpretPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_OK_OpretPersonActionPerformed
         // TODO Tilføj exception handling (try / catch)
         String navn = jTextField1_Fornavn.getText();
@@ -905,29 +911,29 @@ public class GUI extends javax.swing.JFrame
         int creativePoint = Integer.parseInt(jTextField2_CreativePoint.getText());
         int analystPoint = Integer.parseInt(jTextField3_AnalystPoint.getText());
         int finisherPoint = Integer.parseInt(jTextField4_FinisherPoint.getText());
-        
+
         if ((administratorPoint + creativePoint + analystPoint + finisherPoint) != 30)
         {
             JOptionPane.showMessageDialog(this, "Du skal fordele 30 point i alt!");
-            
-            
+
+
         }
-        
+
         control.addPerson(navn, administratorPoint, creativePoint, analystPoint, finisherPoint);
         control.saveToFile();
-        
+
     }//GEN-LAST:event_jButton1_OK_OpretPersonActionPerformed
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         ArrayList<Persons> resultat = control.getPeople();
-        
+
         for (int i = 0; i < resultat.size(); i++)
         {
             allePersonerIAllePersoner.addElement(resultat.get(i).toString());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-    
+
     private void jTextField1_AdministratorPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_AdministratorPointActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1_AdministratorPointActionPerformed

@@ -7,25 +7,30 @@ package flow2_team;
  * Torsdag 10.10.2013
  */
 
+import java.awt.BorderLayout;
 import java.awt.Panel;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.ListModel;
 import javax.swing.text.NavigationFilter;
 
 public class GUI extends javax.swing.JFrame
 {
     //Herunder ses attributterne:
     DefaultListModel personerUdenforTeams;
-    DefaultListModel team1Listen;
-    DefaultListModel team2Listen;
-    DefaultListModel team3Listen;
-    DefaultListModel team4Listen;
+    DefaultListModel nytPanel;
     DefaultListModel allePersonerIAllePersoner;
+    
+    int n;
+    int s;
     
     //Herunder instantieres Control-klassen:
     Control control = new Control();
+    
+    ArrayList<DefaultListModel> listeListe = new ArrayList<>();
 
     //Herunder ses konstruktøren "GUI":
     public GUI()
@@ -34,18 +39,13 @@ public class GUI extends javax.swing.JFrame
 
         //Herunder instantieres DefaultListModel, og jList's sættes til, at parre informationer med attributterne.
         personerUdenforTeams = new DefaultListModel();
-        team1Listen = new DefaultListModel();
-        team2Listen = new DefaultListModel();
-        team3Listen = new DefaultListModel();
-        team4Listen = new DefaultListModel();
+        nytPanel = new DefaultListModel();
         allePersonerIAllePersoner = new DefaultListModel();
 
         jList2_AllePersonerUdenforTeams.setModel(personerUdenforTeams);
-        jList2_TeamNo1.setModel(team1Listen);
-        jList2_TeamNo2.setModel(team2Listen);
-        jList2_TeamNo3.setModel(team3Listen);
-        jList2_TeamNo4.setModel(team4Listen);
+        jList2_Team1.setModel(nytPanel);
         jList1_AllePersonerIAllePersoner.setModel(allePersonerIAllePersoner);
+        
     }
 
     /**
@@ -111,16 +111,8 @@ public class GUI extends javax.swing.JFrame
         jPanel1__TeamNo1 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jList2_TeamNo1 = new javax.swing.JList();
-        jPanel2_TeamNo2 = new javax.swing.JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jList2_TeamNo2 = new javax.swing.JList();
-        jPanel3_TeamNo3 = new javax.swing.JPanel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jList2_TeamNo3 = new javax.swing.JList();
-        jPanel4_TeamNo4 = new javax.swing.JPanel();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        jList2_TeamNo4 = new javax.swing.JList();
         jButton1_HentAllePersoner = new javax.swing.JButton();
+        jButton2_NytTeam = new javax.swing.JButton();
         jPanel5_AlleTeams = new javax.swing.JPanel();
         jButton1_Team1 = new javax.swing.JButton();
         jButton2_Team2 = new javax.swing.JButton();
@@ -168,13 +160,13 @@ public class GUI extends javax.swing.JFrame
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1_ForsideLayout.createSequentialGroup()
                 .add(85, 85, 85)
                 .add(jButton1_OpretTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 203, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 258, Short.MAX_VALUE)
                 .add(jButton1_OpretPerson, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 172, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(73, 73, 73))
             .add(jPanel1_ForsideLayout.createSequentialGroup()
                 .add(180, 180, 180)
                 .add(jLabel1)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(287, Short.MAX_VALUE))
         );
         jPanel1_ForsideLayout.setVerticalGroup(
             jPanel1_ForsideLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -185,7 +177,7 @@ public class GUI extends javax.swing.JFrame
                 .add(jPanel1_ForsideLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jButton1_OpretPerson, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 65, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jButton1_OpretTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(315, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("FORSIDE", jPanel1_Forside);
@@ -267,7 +259,7 @@ public class GUI extends javax.swing.JFrame
                                     .add(jTextField1_AdministratorPoint, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                                     .add(jTextField2_CreativePoint)
                                     .add(jTextField4_FinisherPoint))))))
-                .add(110, 367, Short.MAX_VALUE))
+                .add(110, 422, Short.MAX_VALUE))
         );
         jPanel2_OpretPersonLayout.setVerticalGroup(
             jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -281,14 +273,14 @@ public class GUI extends javax.swing.JFrame
                 .add(18, 18, 18)
                 .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jTextField1_AdministratorPoint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(jLabel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel4)
                     .add(jTextField3_AnalystPoint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jTextField2_CreativePoint, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .add(jTextField2_CreativePoint, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                     .add(jLabel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
@@ -380,7 +372,7 @@ public class GUI extends javax.swing.JFrame
                         .add(18, 18, 18)
                         .add(jPanel3_AllePersonerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel3_AllePersonerLayout.createSequentialGroup()
-                                .add(0, 135, Short.MAX_VALUE)
+                                .add(0, 190, Short.MAX_VALUE)
                                 .add(jLabel7)
                                 .add(104, 104, 104))
                             .add(jPanel3_AllePersonerLayout.createSequentialGroup()
@@ -412,7 +404,7 @@ public class GUI extends javax.swing.JFrame
                                             .add(jLabel19, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .add(jLabel20, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .add(jLabel8))
-                                .addContainerGap(26, Short.MAX_VALUE))))
+                                .addContainerGap(113, Short.MAX_VALUE))))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel3_AllePersonerLayout.createSequentialGroup()
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(jButton1_SletPerson)
@@ -455,7 +447,7 @@ public class GUI extends javax.swing.JFrame
                             .add(jLabel12)
                             .add(jLabel16_FinisherPoint)
                             .add(jLabel20))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 93, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 122, Short.MAX_VALUE)
                         .add(jButton1_SletPerson))
                     .add(jScrollPane1))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -504,7 +496,7 @@ public class GUI extends javax.swing.JFrame
             jPanel1__TeamNo1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1__TeamNo1Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jScrollPane8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
+                .add(jScrollPane8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1__TeamNo1Layout.setVerticalGroup(
@@ -514,74 +506,7 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
-        jTabbedPane2.addTab("Team1", jPanel1__TeamNo1);
-
-        jList2_TeamNo2.setModel(new javax.swing.AbstractListModel()
-        {
-            String[] strings = { " " };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane7.setViewportView(jList2_TeamNo2);
-
-        org.jdesktop.layout.GroupLayout jPanel2_TeamNo2Layout = new org.jdesktop.layout.GroupLayout(jPanel2_TeamNo2);
-        jPanel2_TeamNo2.setLayout(jPanel2_TeamNo2Layout);
-        jPanel2_TeamNo2Layout.setHorizontalGroup(
-            jPanel2_TeamNo2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2_TeamNo2Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jScrollPane7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2_TeamNo2Layout.setVerticalGroup(
-            jPanel2_TeamNo2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2_TeamNo2Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jScrollPane7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane2.addTab("Team2", jPanel2_TeamNo2);
-
-        jScrollPane9.setViewportView(jList2_TeamNo3);
-
-        org.jdesktop.layout.GroupLayout jPanel3_TeamNo3Layout = new org.jdesktop.layout.GroupLayout(jPanel3_TeamNo3);
-        jPanel3_TeamNo3.setLayout(jPanel3_TeamNo3Layout);
-        jPanel3_TeamNo3Layout.setHorizontalGroup(
-            jPanel3_TeamNo3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel3_TeamNo3Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jScrollPane9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel3_TeamNo3Layout.setVerticalGroup(
-            jPanel3_TeamNo3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel3_TeamNo3Layout.createSequentialGroup()
-                .add(jScrollPane9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane2.addTab("Team3", jPanel3_TeamNo3);
-
-        jScrollPane10.setViewportView(jList2_TeamNo4);
-
-        org.jdesktop.layout.GroupLayout jPanel4_TeamNo4Layout = new org.jdesktop.layout.GroupLayout(jPanel4_TeamNo4);
-        jPanel4_TeamNo4.setLayout(jPanel4_TeamNo4Layout);
-        jPanel4_TeamNo4Layout.setHorizontalGroup(
-            jPanel4_TeamNo4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel4_TeamNo4Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jScrollPane10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel4_TeamNo4Layout.setVerticalGroup(
-            jPanel4_TeamNo4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel4_TeamNo4Layout.createSequentialGroup()
-                .add(jScrollPane10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane2.addTab("Team4", jPanel4_TeamNo4);
+        jTabbedPane2.addTab("TEAMS", jPanel1__TeamNo1);
 
         jButton1_HentAllePersoner.setText("HENT ALLE PERSONER");
         jButton1_HentAllePersoner.addActionListener(new java.awt.event.ActionListener()
@@ -589,6 +514,15 @@ public class GUI extends javax.swing.JFrame
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 jButton1_HentAllePersonerActionPerformed(evt);
+            }
+        });
+
+        jButton2_NytTeam.setText("NYT TEAM");
+        jButton2_NytTeam.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton2_NytTeamActionPerformed(evt);
             }
         });
 
@@ -604,16 +538,17 @@ public class GUI extends javax.swing.JFrame
                     .add(jPanel4_OpretTeamLayout.createSequentialGroup()
                         .add(jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel4_OpretTeamLayout.createSequentialGroup()
+                                .add(30, 30, 30)
+                                .add(jButton1_HentAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 191, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(jPanel4_OpretTeamLayout.createSequentialGroup()
                                 .add(21, 21, 21)
                                 .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jButton1_Tilføj)
-                                    .add(jButton2_Fjern)))
-                            .add(jPanel4_OpretTeamLayout.createSequentialGroup()
-                                .add(30, 30, 30)
-                                .add(jButton1_HentAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 191, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(jButton2_NytTeam, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(jButton1_Tilføj, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(jButton2_Fjern, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jTabbedPane2)))
                 .addContainerGap())
         );
@@ -622,9 +557,7 @@ public class GUI extends javax.swing.JFrame
             .add(jPanel4_OpretTeamLayout.createSequentialGroup()
                 .add(jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel4_OpretTeamLayout.createSequentialGroup()
-                        .add(114, 114, 114)
-                        .add(jButton1_Tilføj)
-                        .add(18, 18, 18)
+                        .add(161, 161, 161)
                         .add(jButton2_Fjern)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(jButton3_GåTilForsiden_FraOpretTeam))
@@ -635,8 +568,14 @@ public class GUI extends javax.swing.JFrame
                             .add(jPanel4_OpretTeamLayout.createSequentialGroup()
                                 .add(jButton1_HentAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 282, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(0, 77, Short.MAX_VALUE)))
+                                .add(jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(jPanel4_OpretTeamLayout.createSequentialGroup()
+                                        .add(jButton2_NytTeam)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .add(jButton1_Tilføj, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(180, 180, 180))
+                                    .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 282, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                        .add(0, 106, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -714,7 +653,7 @@ public class GUI extends javax.swing.JFrame
                         .add(jScrollPane5))
                     .add(jButton2_Team2)
                     .add(jButton4_Team4))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
             .add(jPanel5_AlleTeamsLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(jButton5_GåTilForsiden_FraAlleTeams, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -737,7 +676,7 @@ public class GUI extends javax.swing.JFrame
                     .add(jButton4_Team4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel5_AlleTeamsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                     .add(jScrollPane4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .add(18, 18, 18)
                 .add(jButton5_GåTilForsiden_FraAlleTeams)
@@ -804,64 +743,20 @@ public class GUI extends javax.swing.JFrame
     private void jButton1_TilføjActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_TilføjActionPerformed
     {//GEN-HEADEREND:event_jButton1_TilføjActionPerformed
         //Hvis der trykkes på "Tilføj", bliver en person flyttet fra liste 1 (Personer udenfor teams) til en valgt team-liste:
-        if (jTabbedPane2.getSelectedIndex() == 0)
+        //if (jTabbedPane2.getSelectedIndex() == 0)
         {
             Object valgt1 = jList2_AllePersonerUdenforTeams.getSelectedValue();
             
-            if (team1Listen.size() < 4)
+           // if (panelListe.get(jTabbedPane2.getSelectedIndex()))
             {
                 personerUdenforTeams.removeElement(valgt1);
-                team1Listen.addElement(valgt1);
+                listeListe.get(jTabbedPane2.getSelectedIndex()-1).addElement(valgt1);
             }
-            else
+          /**  else
             {
                 JOptionPane.showMessageDialog(this, "Der må max være 4 personer på et team!");
             }
-        }
-
-        if (jTabbedPane2.getSelectedIndex() == 1)
-        {
-            Object valgt2 = jList2_AllePersonerUdenforTeams.getSelectedValue();
-            
-            if (team2Listen.size() < 4)
-            {
-                personerUdenforTeams.removeElement(valgt2);
-                team2Listen.addElement(valgt2);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(this, "Der må max være 4 personer på et team!");
-            }
-        }
-
-        if (jTabbedPane2.getSelectedIndex() == 2)
-        {
-            Object valgt3 = jList2_AllePersonerUdenforTeams.getSelectedValue();
-            
-            if (team3Listen.size() < 4)
-            {
-                personerUdenforTeams.removeElement(valgt3);
-                team3Listen.addElement(valgt3);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(this, "Der må max være 4 personer på et team!");
-            }
-        }
-
-        if (jTabbedPane2.getSelectedIndex() == 3)
-        {
-            Object valgt4 = jList2_AllePersonerUdenforTeams.getSelectedValue();
-
-            if (team4Listen.size() < 4)
-            {
-                personerUdenforTeams.removeElement(valgt4);
-                team4Listen.addElement(valgt4);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(this, "Der må max være 4 personer på et team!");
-            }
+            */
         }
     }//GEN-LAST:event_jButton1_TilføjActionPerformed
 
@@ -871,29 +766,8 @@ public class GUI extends javax.swing.JFrame
         if (jTabbedPane2.getSelectedIndex() == 0)
         {
             Object valgt1 = jList2_TeamNo1.getSelectedValue();
-            team1Listen.removeElement(valgt1);
+            nytPanel.removeElement(valgt1);
             personerUdenforTeams.addElement(valgt1);
-        }
-
-        if (jTabbedPane2.getSelectedIndex() == 1)
-        {
-            Object valgt2 = jList2_TeamNo2.getSelectedValue();
-            team2Listen.removeElement(valgt2);
-            personerUdenforTeams.addElement(valgt2);
-        }
-
-        if (jTabbedPane2.getSelectedIndex() == 2)
-        {
-            Object valgt3 = jList2_TeamNo3.getSelectedValue();
-            team3Listen.removeElement(valgt3);
-            personerUdenforTeams.addElement(valgt3);
-        }
-
-        if (jTabbedPane2.getSelectedIndex() == 3)
-        {
-            Object valgt4 = jList2_TeamNo4.getSelectedValue();
-            team4Listen.removeElement(valgt4);
-            personerUdenforTeams.addElement(valgt4);
         }
     }//GEN-LAST:event_jButton2_FjernActionPerformed
 
@@ -941,6 +815,18 @@ public class GUI extends javax.swing.JFrame
     private void jTextField1_AdministratorPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_AdministratorPointActionPerformed
         //
     }//GEN-LAST:event_jTextField1_AdministratorPointActionPerformed
+
+    private void jButton2_NytTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_NytTeamActionPerformed
+    {//GEN-HEADEREND:event_jButton2_NytTeamActionPerformed
+        n = n + 1;
+        JPanel nytPanel = new JPanel(new BorderLayout()); 
+        jTabbedPane2.addTab("Team" + n, nytPanel);
+        DefaultListModel model = new DefaultListModel();
+        JList nyListe = new JList(model);
+        nytPanel.add(nyListe);
+        
+        listeListe.add(model);
+    }//GEN-LAST:event_jButton2_NytTeamActionPerformed
 
     //Herunder ses main-metoden:
     public static void main(String args[])
@@ -996,6 +882,7 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton jButton1_Team1;
     private javax.swing.JButton jButton1_Tilføj;
     private javax.swing.JButton jButton2_Fjern;
+    private javax.swing.JButton jButton2_NytTeam;
     private javax.swing.JButton jButton2_Team2;
     private javax.swing.JButton jButton3_GåTilForsiden_FraOpretTeam;
     private javax.swing.JButton jButton3_Team3;
@@ -1030,31 +917,22 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JList jList2_AllePersonerUdenforTeams;
     private javax.swing.JList jList2_Team1;
     private javax.swing.JList jList2_TeamNo1;
-    private javax.swing.JList jList2_TeamNo2;
-    private javax.swing.JList jList2_TeamNo3;
-    private javax.swing.JList jList2_TeamNo4;
     private javax.swing.JList jList3_Team2;
     private javax.swing.JList jList4_Team3;
     private javax.swing.JList jList5_Team4;
     private javax.swing.JPanel jPanel1_Forside;
     private javax.swing.JPanel jPanel1__TeamNo1;
     private javax.swing.JPanel jPanel2_OpretPerson;
-    private javax.swing.JPanel jPanel2_TeamNo2;
     private javax.swing.JPanel jPanel3_AllePersoner;
-    private javax.swing.JPanel jPanel3_TeamNo3;
     private javax.swing.JPanel jPanel4_OpretTeam;
-    private javax.swing.JPanel jPanel4_TeamNo4;
     private javax.swing.JPanel jPanel5_AlleTeams;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1_AdministratorPoint;

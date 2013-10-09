@@ -25,7 +25,8 @@ public class WriteFile
         try
         {
             pw = new PrintWriter("C:\\Users\\Darkeonz\\Documents\\NetBeansProjects\\names.txt");
-        } catch (FileNotFoundException ex)
+        }
+        catch (FileNotFoundException ex)
         {
             System.out.println("");
         }

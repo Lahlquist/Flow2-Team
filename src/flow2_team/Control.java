@@ -12,7 +12,7 @@ import java.util.ArrayList;
 //Denne klasse indeholder bl.a. logikken bag vores ArrayList.
 public class Control
 {
-
+    //
     ReadFile rf;
     WriteFile wf;
     ArrayList<Persons> people;

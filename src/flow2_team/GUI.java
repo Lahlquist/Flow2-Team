@@ -890,7 +890,7 @@ public class GUI extends javax.swing.JFrame {
         int finisherPoint = Integer.parseInt(jTextField4_FinisherPoint.getText());
 
         if ((administratorPoint + creativePoint + analystPoint + finisherPoint) != 30) {
-            JOptionPane.showMessageDialog(this, "Du skal fordele 30 point");
+            JOptionPane.showMessageDialog(this, "Du skal fordele 30 point i alt!");
 
             return;
         }

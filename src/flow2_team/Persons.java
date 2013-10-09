@@ -13,8 +13,6 @@ public class Persons
 
     //Herunder ses de 3 attributter:
     private String name;
-    private int alder;
-    private String køn;
     private int adminstrator;
     private int analyst;
     private int creative;
@@ -60,11 +58,9 @@ public class Persons
         this.finisher = finisher;
     }
 
-    public Persons(String name, int alder, String køn)
+    public Persons(String name)
     {
         this.name = name;
-        this.alder = alder;
-        this.køn = køn;
     }
 
     //Herunder ses de "get'ere" og "set'ere" der er lavet for attributterne:
@@ -76,25 +72,5 @@ public class Persons
     public void setName(String name)
     {
         this.name = name;
-    }
-
-    public int getAlder()
-    {
-        return alder;
-    }
-
-    public void setAlder(int alder)
-    {
-        this.alder = alder;
-    }
-
-    public String getKøn()
-    {
-        return køn;
-    }
-
-    public void setKøn(String køn)
-    {
-        this.køn = køn;
     }
 }

@@ -3,23 +3,27 @@ package flow2_team;
 import java.util.ArrayList;
 
 /**
- * Flow 2 - "Team" Udarbejdet af: Andreas og Laura Torsdag 10.10.2013
+ * Flow 2 - "Team"
+ * Udarbejdet af:
+ * Andreas og Laura
+ * Torsdag 10.10.2013
  */
+
 //Denne klasse indeholder bl.a. logikken bag vores ArrayList.
 public class Control
 {
     //
-
     private ReadFile rf;
     private WriteFile wf;
+    
     private ArrayList<Persons> people = new ArrayList<>();
     
+    //Herunder ses konstruktøren "Control":
     public Control()
     {
         this.rf = new ReadFile();
         this.wf = new WriteFile();
         people = rf.getTxt(people);
-        
     }
     
     public ArrayList<Persons> getPeople()

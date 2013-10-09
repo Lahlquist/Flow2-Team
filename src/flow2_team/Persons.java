@@ -1,16 +1,20 @@
 package flow2_team;
 
 /**
- * Flow 2 - "Team"
- * Udarbejdet af:
- * Andreas og Laura
- * Torsdag 10.10.2013
+ * Flow 2 - "Team" Udarbejdet af: Andreas og Laura Torsdag 10.10.2013
  */
-
 //Denne klasse indeholder "get'ere" og "set'ere" for personernes attributter.
 public class Persons
 {
 
+    public Persons(String name, int adminstrator, int analyst, int creative, int finisher)
+    {
+        this.name = name;
+        this.adminstrator = adminstrator;
+        this.analyst = analyst;
+        this.creative = creative;
+        this.finisher = finisher;
+    }
     //Herunder ses de 3 attributter:
     private String name;
     private int adminstrator;
@@ -72,5 +76,17 @@ public class Persons
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    @Override
+    public String toString()
+    {
+
+        return name + "," + adminstrator + "," + analyst + "," + creative + "," + finisher;
+
+    }
+    public String toSaveString()
+    {
+        return name + "," + adminstrator + "," + analyst + "," + creative + "," + finisher;
     }
 }

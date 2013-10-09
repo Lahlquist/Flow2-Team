@@ -7,32 +7,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Flow 2 - "Team"
- * Udarbejdet af:
- * Andreas og Laura
- * Torsdag 10.10.2013
+ * Flow 2 - "Team" Udarbejdet af: Andreas og Laura Torsdag 10.10.2013
  */
-
 public class WriteFile
 {
 
-    ArrayList<Persons> liste;
-
     public WriteFile()
     {
+    }
+
+    public void saveFile(ArrayList<Persons> liste)
+    {
         //-- demo - write text file - catch Exception
-        PrintWriter pw = null;
+        PrintWriter pw;
         try
         {
-            pw = new PrintWriter("C:\\Users\\Darkeonz\\Documents\\NetBeansProjects\\names.txt");
-        }
-        catch (FileNotFoundException ex)
+            pw = new PrintWriter("C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\names.txt");
+            for (int i = 0; i < liste.size(); i++)
+            {
+                pw.println(liste.get(i).toSaveString());
+            }
+            pw.close();
+        } catch (FileNotFoundException ex)
         {
-            System.out.println("");
-        }
-        for (int i = 1; i < liste.size(); i++)
-        {
-            pw.println(liste.get(i).getName());
+            System.out.println("Fejl: " + ex.getMessage());
         }
 
     }

@@ -12,13 +12,11 @@ import java.util.ArrayList;
 public class ReadFile
 {
 
-    ArrayList personlist = new ArrayList();
-
-    public ArrayList getTxt()
+    public ArrayList getTxt(ArrayList<Persons> personlist)
     {
         //Herunder ses referencen til den textfil, der indeholder vores person-data:
 
-        String fileName = "/Users/Ahlquist/Desktop/Personer.txt";
+            String fileName = "C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\names.txt";
 
         // This will reference one line at a time
         String line = null;
@@ -35,7 +33,15 @@ public class ReadFile
 
             while ((line = bufferedReader.readLine()) != null)
             {
-                personlist.add(line);
+                String[] part = line.split(",");
+                String navn = part[0];
+                int admin = Integer.parseInt(part[1]);
+                int anlyser = Integer.parseInt(part[2]);
+                int creative = Integer.parseInt(part[3]);
+                int finisher = Integer.parseInt(part[4]);
+
+                Persons p = new Persons(navn, admin, anlyser, creative, finisher);
+                personlist.add(p);
             }
 
             // Lukker filen.

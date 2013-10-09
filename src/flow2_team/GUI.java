@@ -19,6 +19,8 @@ public class GUI extends javax.swing.JFrame {
     DefaultListModel team2Listen;
     DefaultListModel team3Listen;
     DefaultListModel team4Listen;
+    DefaultListModel allePersonerIAllePersoner;
+    
     //
     ReadFile personListe = new ReadFile();
 
@@ -32,12 +34,14 @@ public class GUI extends javax.swing.JFrame {
         team2Listen = new DefaultListModel();
         team3Listen = new DefaultListModel();
         team4Listen = new DefaultListModel();
+        allePersonerIAllePersoner = new DefaultListModel();
 
         jList2_AllePersonerUdenforTeams.setModel(personerUdenforTeams);
         jList2_TeamNo1.setModel(team1Listen);
         jList2_TeamNo2.setModel(team2Listen);
         jList2_TeamNo3.setModel(team3Listen);
         jList2_TeamNo4.setModel(team4Listen);
+        jList1_AllePersonerIAllePersoner.setModel(allePersonerIAllePersoner);
     }
 
     /**
@@ -47,15 +51,14 @@ public class GUI extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1_Forside = new javax.swing.JPanel();
         jButton1_OpretTeam = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1_OpretPerson = new javax.swing.JButton();
-        jComboBox1_Teams = new javax.swing.JComboBox();
-        jComboBox1_Personer = new javax.swing.JComboBox();
         jPanel2_OpretPerson = new javax.swing.JPanel();
         jLabel2_Navn = new javax.swing.JLabel();
         jTextField1_Fornavn = new javax.swing.JTextField();
@@ -72,7 +75,7 @@ public class GUI extends javax.swing.JFrame {
         jButton1_GåTilForsiden_FraOpretPerson = new javax.swing.JButton();
         jPanel3_AllePersoner = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jList1_AllePersonerIAllePersoner = new javax.swing.JList();
         jButton1_GåTilForsiden_FraAllePersoner = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8_Navn = new javax.swing.JLabel();
@@ -133,8 +136,10 @@ public class GUI extends javax.swing.JFrame {
 
         jButton1_OpretTeam.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 18)); // NOI18N
         jButton1_OpretTeam.setText("OPRET TEAM");
-        jButton1_OpretTeam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1_OpretTeam.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1_OpretTeamActionPerformed(evt);
             }
         });
@@ -144,28 +149,11 @@ public class GUI extends javax.swing.JFrame {
 
         jButton1_OpretPerson.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 18)); // NOI18N
         jButton1_OpretPerson.setText("OPRET PERSON");
-        jButton1_OpretPerson.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1_OpretPerson.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1_OpretPersonActionPerformed(evt);
-            }
-        });
-
-        jComboBox1_Teams.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alle Teams", "Team1", "Team2", "Team3", "Team4" }));
-        jComboBox1_Teams.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBox1_TeamsItemStateChanged(evt);
-            }
-        });
-        jComboBox1_Teams.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1_TeamsActionPerformed(evt);
-            }
-        });
-
-        jComboBox1_Personer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alle Personer", "Personer i Teams", "Personer uden for Teams" }));
-        jComboBox1_Personer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1_PersonerActionPerformed(evt);
             }
         });
 
@@ -174,21 +162,11 @@ public class GUI extends javax.swing.JFrame {
         jPanel1_ForsideLayout.setHorizontalGroup(
             jPanel1_ForsideLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1_ForsideLayout.createSequentialGroup()
-                .add(jPanel1_ForsideLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel1_ForsideLayout.createSequentialGroup()
-                        .add(85, 85, 85)
-                        .add(jButton1_OpretTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanel1_ForsideLayout.createSequentialGroup()
-                        .add(59, 59, 59)
-                        .add(jComboBox1_Teams, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 214, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 122, Short.MAX_VALUE)
-                .add(jPanel1_ForsideLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1_ForsideLayout.createSequentialGroup()
-                        .add(jComboBox1_Personer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 221, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(49, 49, 49))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1_ForsideLayout.createSequentialGroup()
-                        .add(jButton1_OpretPerson, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 172, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(73, 73, 73))))
+                .add(85, 85, 85)
+                .add(jButton1_OpretTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 203, Short.MAX_VALUE)
+                .add(jButton1_OpretPerson, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 172, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(73, 73, 73))
             .add(jPanel1_ForsideLayout.createSequentialGroup()
                 .add(180, 180, 180)
                 .add(jLabel1)
@@ -203,20 +181,17 @@ public class GUI extends javax.swing.JFrame {
                 .add(jPanel1_ForsideLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jButton1_OpretPerson, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 65, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jButton1_OpretTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jPanel1_ForsideLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jComboBox1_Personer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jComboBox1_Teams, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(286, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("FORSIDE", jPanel1_Forside);
 
         jLabel2_Navn.setText("Navn:");
 
-        jTextField1_Fornavn.setText("Fornavn(e)");
-        jTextField1_Fornavn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField1_Fornavn.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jTextField1_FornavnActionPerformed(evt);
             }
         });
@@ -231,30 +206,29 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel6.setText("FINISHER");
 
-        jTextField1_AdministratorPoint.setText("0-30");
-        jTextField1_AdministratorPoint.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField1_AdministratorPoint.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jTextField1_AdministratorPointActionPerformed(evt);
             }
         });
 
-        jTextField2_CreativePoint.setText("0-30");
-
-        jTextField3_AnalystPoint.setText("0-30");
-
-        jTextField4_FinisherPoint.setText("0-30");
-
         jButton1_OK_OpretPerson.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 18)); // NOI18N
         jButton1_OK_OpretPerson.setText("OK");
-        jButton1_OK_OpretPerson.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1_OK_OpretPerson.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1_OK_OpretPersonActionPerformed(evt);
             }
         });
 
         jButton1_GåTilForsiden_FraOpretPerson.setText("Gå til Forsiden");
-        jButton1_GåTilForsiden_FraOpretPerson.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1_GåTilForsiden_FraOpretPerson.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1_GåTilForsiden_FraOpretPersonActionPerformed(evt);
             }
         });
@@ -280,16 +254,16 @@ public class GUI extends javax.swing.JFrame {
                                 .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(jLabel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 112, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                     .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                     .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(jButton1_OK_OpretPerson))
+                                    .add(jButton1_OK_OpretPerson)
+                                    .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(jTextField2_CreativePoint, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField3_AnalystPoint)
-                                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField1_AdministratorPoint)
+                                    .add(jTextField1_AdministratorPoint, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                                    .add(jTextField2_CreativePoint)
                                     .add(jTextField4_FinisherPoint))))))
-                .add(110, 335, Short.MAX_VALUE))
+                .add(110, 367, Short.MAX_VALUE))
         );
         jPanel2_OpretPersonLayout.setVerticalGroup(
             jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -301,18 +275,18 @@ public class GUI extends javax.swing.JFrame {
                 .add(52, 52, 52)
                 .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
-                .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel3)
-                    .add(jTextField1_AdministratorPoint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jTextField1_AdministratorPoint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel4)
                     .add(jTextField3_AnalystPoint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField2_CreativePoint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 8, Short.MAX_VALUE)
+                .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jTextField2_CreativePoint, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .add(jLabel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel6)
                     .add(jTextField4_FinisherPoint, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -325,16 +299,13 @@ public class GUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Opret Person", jPanel2_OpretPerson);
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(jList1_AllePersonerIAllePersoner);
 
         jButton1_GåTilForsiden_FraAllePersoner.setText("Gå til Forsiden");
-        jButton1_GåTilForsiden_FraAllePersoner.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1_GåTilForsiden_FraAllePersoner.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1_GåTilForsiden_FraAllePersonerActionPerformed(evt);
             }
         });
@@ -380,8 +351,10 @@ public class GUI extends javax.swing.JFrame {
         jButton1_SletPerson.setText("SLET PERSON");
 
         jButton1.setText("Hent Personer ");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1ActionPerformed(evt);
             }
         });
@@ -403,7 +376,7 @@ public class GUI extends javax.swing.JFrame {
                         .add(18, 18, 18)
                         .add(jPanel3_AllePersonerLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel3_AllePersonerLayout.createSequentialGroup()
-                                .add(0, 88, Short.MAX_VALUE)
+                                .add(0, 135, Short.MAX_VALUE)
                                 .add(jLabel7)
                                 .add(104, 104, 104))
                             .add(jPanel3_AllePersonerLayout.createSequentialGroup()
@@ -478,7 +451,7 @@ public class GUI extends javax.swing.JFrame {
                             .add(jLabel12)
                             .add(jLabel16_FinisherPoint)
                             .add(jLabel20))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 58, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 93, Short.MAX_VALUE)
                         .add(jButton1_SletPerson))
                     .add(jScrollPane1))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -491,29 +464,30 @@ public class GUI extends javax.swing.JFrame {
         jTabbedPane1.addTab("Alle Personer", jPanel3_AllePersoner);
 
         jButton3_GåTilForsiden_FraOpretTeam.setText("Gå til Forsiden");
-        jButton3_GåTilForsiden_FraOpretTeam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton3_GåTilForsiden_FraOpretTeam.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton3_GåTilForsiden_FraOpretTeamActionPerformed(evt);
             }
         });
 
-        jList2_AllePersonerUdenforTeams.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane6.setViewportView(jList2_AllePersonerUdenforTeams);
 
         jButton1_Tilføj.setText("Tilføj >>");
-        jButton1_Tilføj.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1_Tilføj.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1_TilføjActionPerformed(evt);
             }
         });
 
         jButton2_Fjern.setText("<< Fjern");
-        jButton2_Fjern.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton2_Fjern.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton2_FjernActionPerformed(evt);
             }
         });
@@ -532,13 +506,14 @@ public class GUI extends javax.swing.JFrame {
         jPanel1__TeamNo1Layout.setVerticalGroup(
             jPanel1__TeamNo1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1__TeamNo1Layout.createSequentialGroup()
-                .add(jScrollPane8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                .add(jScrollPane8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane2.addTab("Team1", jPanel1__TeamNo1);
 
-        jList2_TeamNo2.setModel(new javax.swing.AbstractListModel() {
+        jList2_TeamNo2.setModel(new javax.swing.AbstractListModel()
+        {
             String[] strings = { " " };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -558,7 +533,7 @@ public class GUI extends javax.swing.JFrame {
             jPanel2_TeamNo2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel2_TeamNo2Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jScrollPane7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                .add(jScrollPane7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -578,7 +553,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel3_TeamNo3Layout.setVerticalGroup(
             jPanel3_TeamNo3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel3_TeamNo3Layout.createSequentialGroup()
-                .add(jScrollPane9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                .add(jScrollPane9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -598,15 +573,17 @@ public class GUI extends javax.swing.JFrame {
         jPanel4_TeamNo4Layout.setVerticalGroup(
             jPanel4_TeamNo4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel4_TeamNo4Layout.createSequentialGroup()
-                .add(jScrollPane10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                .add(jScrollPane10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane2.addTab("Team4", jPanel4_TeamNo4);
 
         jButton1_HentAllePersoner.setText("HENT ALLE PERSONER");
-        jButton1_HentAllePersoner.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1_HentAllePersoner.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1_HentAllePersonerActionPerformed(evt);
             }
         });
@@ -655,7 +632,7 @@ public class GUI extends javax.swing.JFrame {
                                 .add(jButton1_HentAllePersoner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 282, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(0, 32, Short.MAX_VALUE)))
+                        .add(0, 77, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -673,28 +650,32 @@ public class GUI extends javax.swing.JFrame {
         jButton4_Team4.setFont(new java.awt.Font("Lucida Sans Unicode", 1, 36)); // NOI18N
         jButton4_Team4.setText("TEAM 4");
 
-        jList2_Team1.setModel(new javax.swing.AbstractListModel() {
+        jList2_Team1.setModel(new javax.swing.AbstractListModel()
+        {
             String[] strings = { "Administrator: ", "Analyst: ", "Creative: ", "Finisher: " };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane2.setViewportView(jList2_Team1);
 
-        jList3_Team2.setModel(new javax.swing.AbstractListModel() {
+        jList3_Team2.setModel(new javax.swing.AbstractListModel()
+        {
             String[] strings = { "Administrator: ", "Analyst: ", "Creative: ", "Finisher: " };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane3.setViewportView(jList3_Team2);
 
-        jList4_Team3.setModel(new javax.swing.AbstractListModel() {
+        jList4_Team3.setModel(new javax.swing.AbstractListModel()
+        {
             String[] strings = { "Administrator: ", "Analyst: ", "Creative: ", "Finisher: " };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane4.setViewportView(jList4_Team3);
 
-        jList5_Team4.setModel(new javax.swing.AbstractListModel() {
+        jList5_Team4.setModel(new javax.swing.AbstractListModel()
+        {
             String[] strings = { "Administrator: ", "Analyst: ", "Creative: ", "Finisher: " };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
@@ -702,8 +683,10 @@ public class GUI extends javax.swing.JFrame {
         jScrollPane5.setViewportView(jList5_Team4);
 
         jButton5_GåTilForsiden_FraAlleTeams.setText("Gå til Forsiden");
-        jButton5_GåTilForsiden_FraAlleTeams.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton5_GåTilForsiden_FraAlleTeams.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton5_GåTilForsiden_FraAlleTeamsActionPerformed(evt);
             }
         });
@@ -727,7 +710,7 @@ public class GUI extends javax.swing.JFrame {
                         .add(jScrollPane5))
                     .add(jButton2_Team2)
                     .add(jButton4_Team4))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
             .add(jPanel5_AlleTeamsLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(jButton5_GåTilForsiden_FraAlleTeams, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -750,7 +733,7 @@ public class GUI extends javax.swing.JFrame {
                     .add(jButton4_Team4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel5_AlleTeamsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                    .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                     .add(jScrollPane4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .add(18, 18, 18)
                 .add(jButton5_GåTilForsiden_FraAlleTeams)
@@ -784,31 +767,6 @@ public class GUI extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jButton1_OpretTeamActionPerformed
 
-    private void jComboBox1_TeamsItemStateChanged(java.awt.event.ItemEvent evt)//GEN-FIRST:event_jComboBox1_TeamsItemStateChanged
-    {//GEN-HEADEREND:event_jComboBox1_TeamsItemStateChanged
-    }//GEN-LAST:event_jComboBox1_TeamsItemStateChanged
-
-    private void jComboBox1_TeamsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jComboBox1_TeamsActionPerformed
-    {//GEN-HEADEREND:event_jComboBox1_TeamsActionPerformed
-        /**
-         * jComboBox1_Teams.setSelectedIndex(1);
-         * jComboBox1_Teams.addActionListener(); //Inde i () skal der stå den
-         * fane, som team 1 er på...
-         *
-         * jComboBox1_Teams.setSelectedIndex(2);
-         * jComboBox1_Teams.addActionListener(); //Inde i () skal der stå den
-         * fane, som team 2 er på...
-         *
-         * jComboBox1_Teams.setSelectedIndex(3);
-         * jComboBox1_Teams.addActionListener(); //Inde i () skal der stå den
-         * fane, som team 3 er på...
-         *
-         * jComboBox1_Teams.setSelectedIndex(4);
-         * jComboBox1_Teams.addActionListener(); //Inde i () skal der stå den
-         * fane, som team 4 er på...
-         */
-    }//GEN-LAST:event_jComboBox1_TeamsActionPerformed
-
     private void jButton1_GåTilForsiden_FraOpretPersonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
     {//GEN-HEADEREND:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
         //Når der trykkes på "Gå til Forsiden", skal vi skifte til Panel 1 (Forsiden).
@@ -819,14 +777,6 @@ public class GUI extends javax.swing.JFrame {
     {//GEN-HEADEREND:event_jButton1_OpretPersonActionPerformed
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_jButton1_OpretPersonActionPerformed
-
-    private void jComboBox1_PersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jComboBox1_PersonerActionPerformed
-    {//GEN-HEADEREND:event_jComboBox1_PersonerActionPerformed
-        /**
-         * jComboBox1_Personer.setSelectedIndex(1);
-         * jComboBox1_Personer.addActionListener();
-         */
-    }//GEN-LAST:event_jComboBox1_PersonerActionPerformed
 
     private void jButton1_GåTilForsiden_FraAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_GåTilForsiden_FraAllePersonerActionPerformed
     {//GEN-HEADEREND:event_jButton1_GåTilForsiden_FraAllePersonerActionPerformed
@@ -919,11 +869,6 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButton1_HentAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_HentAllePersonerActionPerformed
     {//GEN-HEADEREND:event_jButton1_HentAllePersonerActionPerformed
-//        personListe.getTxt();
-//        for(int i=0;i<personListe.personlist.size();i++){
-//        personerUdenforTeams.addElement(personListe.getTxt());
-//        }
-
         ArrayList resultat = personListe.getTxt();
 
         for (int i = 0; i < resultat.size(); i++) {
@@ -953,6 +898,11 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        ArrayList resultat = personListe.getTxt();
+
+        for (int i = 0; i < resultat.size(); i++) {
+            allePersonerIAllePersoner.addElement(resultat.get(i));
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1_AdministratorPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_AdministratorPointActionPerformed
@@ -1008,8 +958,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton3_Team3;
     private javax.swing.JButton jButton4_Team4;
     private javax.swing.JButton jButton5_GåTilForsiden_FraAlleTeams;
-    private javax.swing.JComboBox jComboBox1_Personer;
-    private javax.swing.JComboBox jComboBox1_Teams;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1035,7 +983,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8_Navn;
     private javax.swing.JLabel jLabel8_Navnet;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList jList1;
+    private javax.swing.JList jList1_AllePersonerIAllePersoner;
     private javax.swing.JList jList2_AllePersonerUdenforTeams;
     private javax.swing.JList jList2_Team1;
     private javax.swing.JList jList2_TeamNo1;

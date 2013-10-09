@@ -774,7 +774,7 @@ public class GUI extends javax.swing.JFrame
     private void jButton1_HentAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_HentAllePersonerActionPerformed
     {//GEN-HEADEREND:event_jButton1_HentAllePersonerActionPerformed
         //
-        ArrayList<Persons> resultat = control.getPeople();
+        ArrayList<Person> resultat = control.getPeople();
         for (int i = 0; i < resultat.size(); i++)
         {
             personerUdenforTeams.addElement(resultat.get(i).toString());
@@ -804,7 +804,7 @@ public class GUI extends javax.swing.JFrame
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //
-        ArrayList<Persons> resultat = control.getPeople();
+        ArrayList<Person> resultat = control.getPeople();
 
         for (int i = 0; i < resultat.size(); i++)
         {

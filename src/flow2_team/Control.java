@@ -16,7 +16,7 @@ public class Control
     private ReadFile rf;
     private WriteFile wf;
     
-    private ArrayList<Persons> people = new ArrayList<>();
+    private ArrayList<Person> people = new ArrayList<>();
     
     //Herunder ses konstruktøren "Control":
     public Control()
@@ -26,14 +26,14 @@ public class Control
         people = rf.getTxt(people);
     }
     
-    public ArrayList<Persons> getPeople()
+    public ArrayList<Person> getPeople()
     {
         return people;
     }
     
     public void addPerson(String name, int admin, int analyser, int creative, int finisher)
     {
-        Persons p = new Persons(name, admin, analyser, creative, finisher);
+        Person p = new Person(name, admin, analyser, creative, finisher);
         people.add(p);
     }
     

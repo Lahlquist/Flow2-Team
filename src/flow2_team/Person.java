@@ -8,9 +8,9 @@ package flow2_team;
  */
 
 //Denne klasse indeholder "get'ere" og "set'ere" for personernes attributter.
-public class Persons
+public class Person
 {
-    public Persons(String name, int adminstrator, int analyst, int creative, int finisher)
+    public Person(String name, int adminstrator, int analyst, int creative, int finisher)
     {
         this.name = name;
         this.adminstrator = adminstrator;
@@ -66,7 +66,7 @@ public class Persons
         this.finisher = finisher;
     }
 
-    public Persons(String name)
+    public Person(String name)
     {
         this.name = name;
     }

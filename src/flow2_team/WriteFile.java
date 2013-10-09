@@ -20,7 +20,7 @@ public class WriteFile
         
     }
 
-    public void saveFile(ArrayList<Persons> liste)
+    public void saveFile(ArrayList<Person> liste)
     {
         //
         PrintWriter pw;

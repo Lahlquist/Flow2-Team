@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class ReadFile
 {
-    public ArrayList getTxt(ArrayList<Persons> personlist)
+    public ArrayList getTxt(ArrayList<Person> personlist)
     {
         //Herunder ses referencen til den textfil, der indeholder vores person-data:
         String fileName = "C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\names.txt";
@@ -40,7 +40,7 @@ public class ReadFile
                 int creative = Integer.parseInt(part[3]);
                 int finisher = Integer.parseInt(part[4]);
 
-                Persons p = new Persons(navn, admin, anlyser, creative, finisher);
+                Person p = new Person(navn, admin, anlyser, creative, finisher);
                 personlist.add(p);
             }
 

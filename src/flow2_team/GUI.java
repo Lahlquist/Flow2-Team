@@ -30,7 +30,8 @@ public class GUI extends javax.swing.JFrame
     //Herunder instantieres Control-klassen:
     Control control = new Control();
     
-    ArrayList<DefaultListModel> listeListe = new ArrayList<>();
+    ArrayList<DefaultListModel> modelListe = new ArrayList<>();
+    ArrayList<JList> listeListe = new ArrayList<>();
 
     //Herunder ses konstruktøren "GUI":
     public GUI()
@@ -742,39 +743,32 @@ public class GUI extends javax.swing.JFrame
 
     private void jButton1_TilføjActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_TilføjActionPerformed
     {//GEN-HEADEREND:event_jButton1_TilføjActionPerformed
-        //Hvis der trykkes på "Tilføj", bliver en person flyttet fra liste 1 (Personer udenfor teams) til en valgt team-liste:
-        //if (jTabbedPane2.getSelectedIndex() == 0)
+        //
+        if (modelListe.get(jTabbedPane2.getSelectedIndex()-1).size() < 4)
         {
             Object valgt1 = jList2_AllePersonerUdenforTeams.getSelectedValue();
-            
-           // if (panelListe.get(jTabbedPane2.getSelectedIndex()))
-            {
-                personerUdenforTeams.removeElement(valgt1);
-                listeListe.get(jTabbedPane2.getSelectedIndex()-1).addElement(valgt1);
-            }
-          /**  else
-            {
-                JOptionPane.showMessageDialog(this, "Der må max være 4 personer på et team!");
-            }
-            */
+            personerUdenforTeams.removeElement(valgt1);
+            modelListe.get(jTabbedPane2.getSelectedIndex()-1).addElement(valgt1);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Der må max være 4 personer på et team!");
         }
     }//GEN-LAST:event_jButton1_TilføjActionPerformed
 
     private void jButton2_FjernActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_FjernActionPerformed
     {//GEN-HEADEREND:event_jButton2_FjernActionPerformed
-        //Hvis der trykkes på "Fjern", bliver en person flyttet fra team-listen og tilbage til liste 1 (Personer udenfor teams):
-        if (jTabbedPane2.getSelectedIndex() == 0)
-        {
-            Object valgt1 = jList2_TeamNo1.getSelectedValue();
-            nytPanel.removeElement(valgt1);
-            personerUdenforTeams.addElement(valgt1);
-        }
+        //
+        Object valgt2 = listeListe.get(jTabbedPane2.getSelectedIndex()-1).getSelectedValue();
+        modelListe.get(jTabbedPane2.getSelectedIndex()-1).removeElement(valgt2);
+        personerUdenforTeams.addElement(valgt2);
     }//GEN-LAST:event_jButton2_FjernActionPerformed
 
     private void jButton1_HentAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_HentAllePersonerActionPerformed
     {//GEN-HEADEREND:event_jButton1_HentAllePersonerActionPerformed
         //
         ArrayList<Person> resultat = control.getPeople();
+        
         for (int i = 0; i < resultat.size(); i++)
         {
             personerUdenforTeams.addElement(resultat.get(i).toString());
@@ -825,7 +819,8 @@ public class GUI extends javax.swing.JFrame
         JList nyListe = new JList(model);
         nytPanel.add(nyListe);
         
-        listeListe.add(model);
+        modelListe.add(model);
+        listeListe.add(nyListe);
     }//GEN-LAST:event_jButton2_NytTeamActionPerformed
 
     //Herunder ses main-metoden:

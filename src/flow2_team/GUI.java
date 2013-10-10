@@ -575,6 +575,7 @@ public class GUI extends javax.swing.JFrame
 
     private void jButton2_NytTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_NytTeamActionPerformed
     {//GEN-HEADEREND:event_jButton2_NytTeamActionPerformed
+        //
         n = n + 1;
         JPanel nytPanel = new JPanel(new BorderLayout());
         jTabbedPane2.addTab("Team" + n, nytPanel);

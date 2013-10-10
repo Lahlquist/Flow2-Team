@@ -580,12 +580,13 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_jButton1_OK_OpretPersonActionPerformed
 
     private void jTextField1_AdministratorPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_AdministratorPointActionPerformed
-        //
+        //Dette tekstfelt indeholder ingen kode, eftersom man bare skal kunne skrive i det i GUI.
     }//GEN-LAST:event_jTextField1_AdministratorPointActionPerformed
 
     private void jButton2_NytTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_NytTeamActionPerformed
     {//GEN-HEADEREND:event_jButton2_NytTeamActionPerformed
-        //
+        //Når der trykkes på knappen "Nyt Team", skal der oprettes et nyt tab indeholdende en jList,
+        //hvortil person-objekter kan tilføjes:
         n = n + 1;
         JPanel nytPanel = new JPanel(new BorderLayout());
         jTabbedPane2.addTab("Team" + n, nytPanel);
@@ -596,27 +597,28 @@ public class GUI extends javax.swing.JFrame
         modelListe.add(model);
         listeListe.add(nyListe);
         
+        //Når der trykkes på knappen, "slettes" nedenstående label:
         jLabel7_TeametErGemt.setText("");
     }//GEN-LAST:event_jButton2_NytTeamActionPerformed
 
     private void jButton2_GemTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_GemTeamActionPerformed
     {//GEN-HEADEREND:event_jButton2_GemTeamActionPerformed
-        //
+        //Når der trykkes på "Gem Team", skal teamet gemmes i en tekstfil:
         String navn = jTabbedPane2.getTitleAt(jTabbedPane2.getSelectedIndex());
         control.addTeam(navn);
         control.saveTeamToFile();
         
+        //Når der trykkes på knappen, indsættes nedenstående tekst i nedenstående label:
         jLabel7_TeametErGemt.setText("TEAMET ER GEMT...");
     }//GEN-LAST:event_jButton2_GemTeamActionPerformed
 
     private void jButton2_HentAlleTeamsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_HentAlleTeamsActionPerformed
     {//GEN-HEADEREND:event_jButton2_HentAlleTeamsActionPerformed
-        //
+        //Når der trykkes på knappen "Hent alle teams" skal listes cleares til at starte med:
         alleTeams.clear();
 
-        //
+        //Herefter indhentes de oprettede team-objekter fra "getTeam":
         ArrayList<Team> teamresultat = control.getTeam();
-
         for (int i = 0; i < teamresultat.size(); i++)
         {
             alleTeams.addElement(teamresultat.get(i).toString());

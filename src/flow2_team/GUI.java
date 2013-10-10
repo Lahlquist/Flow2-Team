@@ -1,8 +1,13 @@
 package flow2_team;
 
 /**
- * Flow 2 - "Team" Udarbejdet af: Andreas og Laura Torsdag 10.10.2013
+ * Flow 2 - "Team"
+ * Udarbejdet af:
+ * Andreas og Laura
+ * Torsdag 10.10.2013
  */
+
+//Herunder ses alle de klasser fra Java-biblioteket, som vi har importeret:
 import java.awt.BorderLayout;
 import java.awt.Panel;
 import java.util.ArrayList;
@@ -16,13 +21,12 @@ import javax.swing.text.NavigationFilter;
 public class GUI extends javax.swing.JFrame
 {
     //Herunder ses attributterne:
-
     DefaultListModel personerUdenforTeams;
     DefaultListModel nytPanel;
     DefaultListModel alleTeams;
     int n;
-    int s;
-    //Herunder instantieres Control-klassen:
+    
+    //Herunder ses tre instantieringer:
     Control control = new Control();
     ArrayList<DefaultListModel> modelListe = new ArrayList<>();
     ArrayList<JList> listeListe = new ArrayList<>();
@@ -32,15 +36,13 @@ public class GUI extends javax.swing.JFrame
     {
         initComponents();
 
-        //Herunder instantieres DefaultListModel, og jList's sættes til, at parre informationer med attributterne.
+        //Herunder oprettes der to nye objekter, kaldet "personerUdenForTeams" og "alleTeams":
         personerUdenforTeams = new DefaultListModel();
-
         alleTeams = new DefaultListModel();
 
+        //Herunder kopieres de to ovenstående model-objekter ind i to jLists:
         jList2_AllePersonerUdenforTeams.setModel(personerUdenforTeams);
-
         jList1_AlleTeams.setModel(alleTeams);
-
     }
 
     /**
@@ -508,13 +510,17 @@ public class GUI extends javax.swing.JFrame
 
     private void jButton1_TilføjActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_TilføjActionPerformed
     {//GEN-HEADEREND:event_jButton1_TilføjActionPerformed
-        //
+        //Når der trykkes på "Tilføj", skal den valgte person, indsættes i det valgte team.
+        
+        //Hvis det valgte panel indeholder mindre end 4 person-objekter, skal den valgte person indsættes...
         if (modelListe.get(jTabbedPane2.getSelectedIndex() - 1).size() < 4)
         {
             Object valgt1 = jList2_AllePersonerUdenforTeams.getSelectedValue();
             personerUdenforTeams.removeElement(valgt1);
             modelListe.get(jTabbedPane2.getSelectedIndex() - 1).addElement(valgt1);
-        } else
+        }
+        //...ellers skal der komme en besked om, at der ikke kan tilføjes flere personer:
+        else
         {
             JOptionPane.showMessageDialog(this, "Der må max være 4 personer på et team!");
         }
@@ -522,7 +528,7 @@ public class GUI extends javax.swing.JFrame
 
     private void jButton2_FjernActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_FjernActionPerformed
     {//GEN-HEADEREND:event_jButton2_FjernActionPerformed
-        //
+        //Når der trykkes på "Fjern", skal den valgte person fjernes fra teamet, og flyttes tilbage til person-listen:
         Object valgt2 = listeListe.get(jTabbedPane2.getSelectedIndex() - 1).getSelectedValue();
         modelListe.get(jTabbedPane2.getSelectedIndex() - 1).removeElement(valgt2);
         personerUdenforTeams.addElement(valgt2);
@@ -530,10 +536,11 @@ public class GUI extends javax.swing.JFrame
 
     private void jButton1_HentAllePersonerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_HentAllePersonerActionPerformed
     {//GEN-HEADEREND:event_jButton1_HentAllePersonerActionPerformed
+        //Når der trykkes på "Hent alle personer", skal listen cleares til at starte med:
         personerUdenforTeams.clear();
-        //
+        
+        //Herefter indhentes de oprettede person-objekter fra "getPeople":
         ArrayList<Person> resultat = control.getPeople();
-
         for (int i = 0; i < resultat.size(); i++)
         {
             personerUdenforTeams.addElement(resultat.get(i).toString());
@@ -541,21 +548,25 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_jButton1_HentAllePersonerActionPerformed
 
     private void jTextField1_FornavnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_FornavnActionPerformed
-        //
+        //Dette tekstfelt indeholder ingen kode, eftersom man bare skal kunne skrive i det i GUI.
     }//GEN-LAST:event_jTextField1_FornavnActionPerformed
 
     private void jButton1_OK_OpretPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_OK_OpretPersonActionPerformed
-        // 
+        //Når der trykkes på "OK", skal der oprettes et nyt person-objekt, hvis kravene overholdes.
+        
+        //Herunder ses de forskellige metoder der henter informationer fra nogle af de andre klasser:
         String navn = jTextField1_Fornavn.getText();
         int administratorPoint = Integer.parseInt(jTextField1_AdministratorPoint.getText());
         int creativePoint = Integer.parseInt(jTextField2_CreativePoint.getText());
         int analystPoint = Integer.parseInt(jTextField3_AnalystPoint.getText());
         int finisherPoint = Integer.parseInt(jTextField4_FinisherPoint.getText());
 
+        //Hvis de 4 "point" ikke giver 30 i alt, skal der vises en advarsel omkring dette...
         if ((administratorPoint + creativePoint + analystPoint + finisherPoint) != 30)
         {
             JOptionPane.showMessageDialog(this, "Du skal fordele 30 point i alt!");
         }
+        //...ellers (hvis det giver 30 i alt), skal person-objektet med de 4 point gemmes i en tekstfil:
         else
         { 
         control.addPerson(navn, administratorPoint, creativePoint, analystPoint, finisherPoint);
@@ -570,7 +581,6 @@ public class GUI extends javax.swing.JFrame
 
     private void jTextField1_AdministratorPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_AdministratorPointActionPerformed
         //
-        
     }//GEN-LAST:event_jTextField1_AdministratorPointActionPerformed
 
     private void jButton2_NytTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_NytTeamActionPerformed

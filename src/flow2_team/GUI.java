@@ -792,7 +792,7 @@ public class GUI extends javax.swing.JFrame
 
         for (int i = 0; i < teamresultat.size(); i++)
         {
-            alleTeams.addElement(teamresultat.get(i).toString());   
+            alleTeams.addElement(teamresultat.get(i).toString()); 
         }
     }//GEN-LAST:event_jButton2_HentAlleTeamsActionPerformed
 

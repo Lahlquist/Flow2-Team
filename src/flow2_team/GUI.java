@@ -19,7 +19,6 @@ public class GUI extends javax.swing.JFrame
 
     DefaultListModel personerUdenforTeams;
     DefaultListModel nytPanel;
-    DefaultListModel allePersonerIAllePersoner;
     DefaultListModel alleTeams;
     int n;
     int s;
@@ -35,11 +34,11 @@ public class GUI extends javax.swing.JFrame
 
         //Herunder instantieres DefaultListModel, og jList's sættes til, at parre informationer med attributterne.
         personerUdenforTeams = new DefaultListModel();
-        allePersonerIAllePersoner = new DefaultListModel();
+
         alleTeams = new DefaultListModel();
 
         jList2_AllePersonerUdenforTeams.setModel(personerUdenforTeams);
-        jList1_AllePersonerIAllePersoner.setModel(allePersonerIAllePersoner);
+
         jList1_AlleTeams.setModel(alleTeams);
 
     }
@@ -589,13 +588,13 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_jButton2_HentAlleTeamsActionPerformed
         //
         alleTeams.clear();
-        
+
         //
         ArrayList<Team> teamresultat = control.getTeam();
 
         for (int i = 0; i < teamresultat.size(); i++)
         {
-            alleTeams.addElement(teamresultat.get(i).toString()); 
+            alleTeams.addElement(teamresultat.get(i).toString());
         }
     }//GEN-LAST:event_jButton2_HentAlleTeamsActionPerformed
 

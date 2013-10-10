@@ -17,7 +17,12 @@ public class Control
     private WriteFile wf;
     
     private ArrayList<Person> people = new ArrayList<>();
-    
+    private ArrayList<Team> team = new ArrayList<>();
+
+    public ArrayList<Team> getTeam()
+    {
+        return team;
+    }
     //Herunder ses konstruktøren "Control":
     public Control()
     {
@@ -36,9 +41,17 @@ public class Control
         Person p = new Person(name, admin, analyser, creative, finisher);
         people.add(p);
     }
+    public void addTeam(String name){
+        Team t = new Team(name);
+        team.add(t);
+    }
     
     public void saveToFile()
     {
         wf.saveFile(people);
+    }
+    
+    public void saveTeamToFile(){
+        wf.saveTeam(team);
     }
 }

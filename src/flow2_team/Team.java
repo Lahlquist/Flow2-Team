@@ -26,5 +26,15 @@ public class Team
         teammembers.add(p);
     }
     
+        public String toString()
+    {
+        return teamname;
+    }
+    
+    public String toSaveString()
+    {
+        return teamname;
+    }
+    
     
 }

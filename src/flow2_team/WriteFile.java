@@ -27,7 +27,29 @@ public class WriteFile
         
         try
         {
-            pw = new PrintWriter("C:\\Users\\Andreas\\Documents\\NetBeansProjects\\Flow2\\build\\classes\\flow2\\names.txt");
+            pw = new PrintWriter("person.txt");
+            
+            for (int i = 0; i < liste.size(); i++)
+            {
+                pw.println(liste.get(i).toSaveString());
+            }
+            
+            pw.close(); 
+        }
+        
+        catch (FileNotFoundException ex)
+        {
+            System.out.println("Fejl: " + ex.getMessage());
+        }
+    }
+    public void saveTeam(ArrayList<Team> liste)
+    {
+        //
+        PrintWriter pw;
+        
+        try
+        {
+            pw = new PrintWriter("team.txt");
             
             for (int i = 0; i < liste.size(); i++)
             {

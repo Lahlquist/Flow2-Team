@@ -479,7 +479,7 @@ public class GUI extends javax.swing.JFrame
     private void jButton1_OpretTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_OpretTeamActionPerformed
     {//GEN-HEADEREND:event_jButton1_OpretTeamActionPerformed
         //Når der trykkes på "Opret Team"-knappen, skal vi skifte til panelet "Opret Team".
-        jTabbedPane1.setSelectedIndex(3);
+        jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_jButton1_OpretTeamActionPerformed
 
     private void jButton1_GåTilForsiden_FraOpretPersonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_GåTilForsiden_FraOpretPersonActionPerformed
@@ -491,7 +491,7 @@ public class GUI extends javax.swing.JFrame
     private void jButton1_OpretPersonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1_OpretPersonActionPerformed
     {//GEN-HEADEREND:event_jButton1_OpretPersonActionPerformed
         //Når der trykkes på "Opret Person"-knappen, skal vi skifte til panelet "Opret Person".
-        jTabbedPane1.setSelectedIndex(1);
+        jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jButton1_OpretPersonActionPerformed
 
     private void jButton3_GåTilForsiden_FraOpretTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3_GåTilForsiden_FraOpretTeamActionPerformed

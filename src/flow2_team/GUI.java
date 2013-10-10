@@ -545,7 +545,7 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_jTextField1_FornavnActionPerformed
 
     private void jButton1_OK_OpretPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_OK_OpretPersonActionPerformed
-        //
+        // 
         String navn = jTextField1_Fornavn.getText();
         int administratorPoint = Integer.parseInt(jTextField1_AdministratorPoint.getText());
         int creativePoint = Integer.parseInt(jTextField2_CreativePoint.getText());
@@ -570,6 +570,7 @@ public class GUI extends javax.swing.JFrame
 
     private void jTextField1_AdministratorPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_AdministratorPointActionPerformed
         //
+        
     }//GEN-LAST:event_jTextField1_AdministratorPointActionPerformed
 
     private void jButton2_NytTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_NytTeamActionPerformed

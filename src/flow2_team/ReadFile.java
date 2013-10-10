@@ -1,5 +1,6 @@
 package flow2_team;
 
+//Herunder ses de klasser vi har importeret fra Java-biblioteket:
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -7,11 +8,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Flow 2 - "Team" Udarbejdet af: Andreas og Laura Torsdag 10.10.2013
+ * Flow 2 - "Team"
+ * Udarbejdet af:
+ * Andreas og Laura
+ * Torsdag 10.10.2013
  */
+
+//Denne klasse indeholder metoder til at læse i tekstfiler.
 public class ReadFile
 {
-
     public ArrayList getTxt(ArrayList<Person> personlist)
     {
         //Herunder ses referencen til den textfil, der indeholder vores person-data:
@@ -83,15 +88,19 @@ public class ReadFile
             }
 
             // Lukker filen.
-            bufferedReader.close();
-        } catch (FileNotFoundException ex)
+            bufferedReader.close();  
+        }
+        
+        catch (FileNotFoundException ex)
         {
             System.out.println("Unable to open file '" + fileName + "'");
-        } catch (IOException ex)
+        }
+        
+        catch (IOException ex)
         {
             System.out.println("Error reading file '" + fileName + "'");
         }
-
+        
         return teamliste;
     }
 }

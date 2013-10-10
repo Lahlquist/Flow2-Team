@@ -1,5 +1,6 @@
 package flow2_team;
 
+//Herunder ses de klasser vi har importeret fra Java-biblioteket:
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -13,9 +14,10 @@ import java.util.ArrayList;
  * Torsdag 10.10.2013
  */
 
+//Denne klasse indeholder metoder til at skrive i tekstfiler.
 public class WriteFile
 {
-    //
+    //Herunder ses konstruktøren "WriteFile":
     public WriteFile()
     {
         
@@ -23,7 +25,6 @@ public class WriteFile
 
     public void saveFile(ArrayList<Person> liste)
     {
-        //
         PrintWriter pw;
         
         try
@@ -43,9 +44,9 @@ public class WriteFile
             System.out.println("Fejl: " + ex.getMessage());
         }
     }
+    
     public void saveTeam(ArrayList<Team> liste)
     {
-        //
         PrintWriter pw;
         
         try

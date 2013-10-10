@@ -7,9 +7,10 @@ package flow2_team;
  * Torsdag 10.10.2013
  */
 
-//Denne klasse indeholder "get'ere" og "set'ere" for personernes attributter.
+//Denne klasse indeholder bl.a. "get'ere" og "set'ere" for personernes attributter.
 public class Person
 {
+    //Herunder ses konstruktøren "Person":
     public Person(String name, int adminstrator, int analyst, int creative, int finisher)
     {
         this.name = name;
@@ -19,8 +20,7 @@ public class Person
         this.finisher = finisher;
     }
     
-    
-    //Herunder ses de 3 attributter:
+    //Herunder attributterne:
     private String name;
     private int adminstrator;
     private int analyst;
@@ -72,7 +72,6 @@ public class Person
         this.name = name;
     }
 
-    //Herunder ses de "get'ere" og "set'ere" der er lavet for attributterne:
     public String getName()
     {
         return name;

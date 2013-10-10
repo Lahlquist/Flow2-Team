@@ -71,6 +71,7 @@ public class GUI extends javax.swing.JFrame
         jButton1_HentAllePersoner = new javax.swing.JButton();
         jButton2_NytTeam = new javax.swing.JButton();
         jButton2_GemTeam = new javax.swing.JButton();
+        jLabel7_TeametErGemt = new javax.swing.JLabel();
         jPanel5_AlleTeams = new javax.swing.JPanel();
         jButton5_GåTilForsiden_FraAlleTeams = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -123,7 +124,7 @@ public class GUI extends javax.swing.JFrame
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1_ForsideLayout.createSequentialGroup()
                 .add(137, 137, 137)
                 .add(jButton1_OpretTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 140, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 172, Short.MAX_VALUE)
                 .add(jButton1_OpretPerson, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 172, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(145, 145, 145))
             .add(jPanel1_ForsideLayout.createSequentialGroup()
@@ -140,7 +141,7 @@ public class GUI extends javax.swing.JFrame
                 .add(jPanel1_ForsideLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jButton1_OpretPerson, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 65, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jButton1_OpretTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(419, Short.MAX_VALUE))
+                .addContainerGap(456, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("FORSIDE", jPanel1_Forside);
@@ -188,7 +189,7 @@ public class GUI extends javax.swing.JFrame
         jPanel1__TeamNo1Layout.setVerticalGroup(
             jPanel1__TeamNo1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1__TeamNo1Layout.createSequentialGroup()
-                .add(jScrollPane8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                .add(jScrollPane8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -244,12 +245,15 @@ public class GUI extends javax.swing.JFrame
                                     .add(jButton1_Tilføj, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .add(jButton2_Fjern, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTabbedPane2)))
+                        .add(jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel4_OpretTeamLayout.createSequentialGroup()
+                                .add(0, 0, Short.MAX_VALUE)
+                                .add(jLabel7_TeametErGemt, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 136, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jButton2_GemTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 121, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(124, 124, 124))
+                            .add(jTabbedPane2))))
                 .addContainerGap())
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel4_OpretTeamLayout.createSequentialGroup()
-                .add(0, 0, Short.MAX_VALUE)
-                .add(jButton2_GemTeam, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 121, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(130, 130, 130))
         );
         jPanel4_OpretTeamLayout.setVerticalGroup(
             jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -273,11 +277,13 @@ public class GUI extends javax.swing.JFrame
                                         .add(180, 180, 180))
                                     .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 282, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton2_GemTeam))
+                        .add(jPanel4_OpretTeamLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(jButton2_GemTeam, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(jLabel7_TeametErGemt, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel4_OpretTeamLayout.createSequentialGroup()
-                        .addContainerGap(407, Short.MAX_VALUE)
+                        .addContainerGap(422, Short.MAX_VALUE)
                         .add(jButton3_GåTilForsiden_FraOpretTeam)))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Opret Team", jPanel4_OpretTeam);
@@ -311,7 +317,7 @@ public class GUI extends javax.swing.JFrame
                 .add(jButton5_GåTilForsiden_FraAlleTeams, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 143, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(0, 0, Short.MAX_VALUE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel5_AlleTeamsLayout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
+                .addContainerGap(137, Short.MAX_VALUE)
                 .add(jPanel5_AlleTeamsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 553, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jButton2_HentAlleTeams, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 172, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -326,7 +332,7 @@ public class GUI extends javax.swing.JFrame
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 295, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(72, 72, 72)
                 .add(jButton5_GåTilForsiden_FraAlleTeams)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Alle Teams", jPanel5_AlleTeams);
@@ -417,7 +423,7 @@ public class GUI extends javax.swing.JFrame
                                         .add(124, 124, 124)))
                                 .add(30, 30, 30)
                                 .add(jButton1_OK_OpretPerson)))))
-                .addContainerGap(339, Short.MAX_VALUE))
+                .addContainerGap(355, Short.MAX_VALUE))
         );
         jPanel2_OpretPersonLayout.setVerticalGroup(
             jPanel2_OpretPersonLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -575,6 +581,8 @@ public class GUI extends javax.swing.JFrame
 
         modelListe.add(model);
         listeListe.add(nyListe);
+        
+        jLabel7_TeametErGemt.setText("");
     }//GEN-LAST:event_jButton2_NytTeamActionPerformed
 
     private void jButton2_GemTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_GemTeamActionPerformed
@@ -582,6 +590,8 @@ public class GUI extends javax.swing.JFrame
         String navn = jTabbedPane2.getTitleAt(jTabbedPane2.getSelectedIndex());
         control.addTeam(navn);
         control.saveTeamToFile();
+        
+        jLabel7_TeametErGemt.setText("TEAMET ER GEMT...");
     }//GEN-LAST:event_jButton2_GemTeamActionPerformed
 
     private void jButton2_HentAlleTeamsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_HentAlleTeamsActionPerformed
@@ -660,6 +670,7 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7_TeametErGemt;
     private javax.swing.JList jList1_AlleTeams;
     private javax.swing.JList jList2_AllePersonerUdenforTeams;
     private javax.swing.JList jList2_TeamNo1;

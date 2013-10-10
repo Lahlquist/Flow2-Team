@@ -556,7 +556,8 @@ public class GUI extends javax.swing.JFrame
         {
             JOptionPane.showMessageDialog(this, "Du skal fordele 30 point i alt!");
         }
-
+        else
+        { 
         control.addPerson(navn, administratorPoint, creativePoint, analystPoint, finisherPoint);
         control.saveToFile();
         jTextField1_Fornavn.setText("");
@@ -564,6 +565,7 @@ public class GUI extends javax.swing.JFrame
         jTextField2_CreativePoint.setText("");
         jTextField3_AnalystPoint.setText("");
         jTextField4_FinisherPoint.setText("");
+        }
     }//GEN-LAST:event_jButton1_OK_OpretPersonActionPerformed
 
     private void jTextField1_AdministratorPointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_AdministratorPointActionPerformed

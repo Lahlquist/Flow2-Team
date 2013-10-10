@@ -23,6 +23,7 @@ public class Control
     {
         return team;
     }
+    
     //Herunder ses konstruktøren "Control":
     public Control()
     {

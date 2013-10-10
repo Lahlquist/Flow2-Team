@@ -19,6 +19,7 @@ public class Person
         this.finisher = finisher;
     }
     
+    
     //Herunder ses de 3 attributter:
     private String name;
     private int adminstrator;

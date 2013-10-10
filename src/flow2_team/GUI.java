@@ -591,6 +591,7 @@ public class GUI extends javax.swing.JFrame
 
     private void jButton2_GemTeamActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2_GemTeamActionPerformed
     {//GEN-HEADEREND:event_jButton2_GemTeamActionPerformed
+        //
         String navn = jTabbedPane2.getTitleAt(jTabbedPane2.getSelectedIndex());
         control.addTeam(navn);
         control.saveTeamToFile();

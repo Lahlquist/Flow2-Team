@@ -43,10 +43,14 @@ public class ReadFile
 
             // Lukker filen.
             bufferedReader.close();
-        } catch (FileNotFoundException ex)
+        }
+        
+        catch (FileNotFoundException ex)
         {
             System.out.println("Unable to open file '" + fileName + "'");
-        } catch (IOException ex)
+        }
+        
+        catch (IOException ex)
         {
             System.out.println("Error reading file '" + fileName + "'");
         }

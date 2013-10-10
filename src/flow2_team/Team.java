@@ -1,16 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package flow2_team;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Andreas
+ * Flow 2 - "Team" Udarbejdet af: Andreas og Laura Torsdag 10.10.2013
  */
+
 public class Team
 {
     private String teamname;
